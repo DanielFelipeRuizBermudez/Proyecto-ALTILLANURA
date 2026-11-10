@@ -1,0 +1,4 @@
+[core]
+    remote = almacen
+['remote "almacen"']
+    url = C:\Users\mipip\dvc_altillanura

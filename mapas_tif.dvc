@@ -1,0 +1,6 @@
+outs:
+- md5: f8259962ebe68b03ada15b149dd7f015.dir
+  size: 21087112
+  nfiles: 7
+  hash: md5
+  path: mapas_tif
