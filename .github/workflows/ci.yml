@@ -1,0 +1,45 @@
+name: Pruebas y pipeline
+
+on:
+  push:
+    branches: [main, "feature/**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    env:
+      MPLBACKEND: Agg
+
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Pruebas unitarias, de calidad de datos e integración
+        run: pytest
+
+      - name: Unir los CSV de MapBiomas
+        run: python scripts/02_unir_mapbiomas.py
+
+      - name: Modelos ARIMA por municipio
+        run: python scripts/08_arima.py
+
+      - name: Guardar resultados de ARIMA
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-arima
+          path: |
+            datos/procesados/arima/
+            graficas/arima/
