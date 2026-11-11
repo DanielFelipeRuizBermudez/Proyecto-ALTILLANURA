@@ -1,4 +1,4 @@
 [core]
-    remote = almacen
-['remote "almacen"']
-    url = C:\Users\mipip\dvc_altillanura
+    remote = gcs
+['remote "gcs"']
+    url = gs://altillanura-dvc-2026/dvc
