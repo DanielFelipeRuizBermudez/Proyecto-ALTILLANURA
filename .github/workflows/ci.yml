@@ -30,16 +30,16 @@ jobs:
       - name: Pruebas unitarias, de calidad de datos e integración
         run: pytest
 
-      - name: Unir los CSV de MapBiomas
-        run: python scripts/02_unir_mapbiomas.py
+      - name: Expansión - unir los CSV de MapBiomas
+        run: python modulos/expansion/scripts/02_unir_mapbiomas.py
 
-      - name: Modelos ARIMA por municipio
-        run: python scripts/08_arima.py
+      - name: Expansión - modelos ARIMA por municipio
+        run: python modulos/expansion/scripts/08_arima.py
 
       - name: Guardar resultados de ARIMA
         uses: actions/upload-artifact@v4
         with:
           name: resultados-arima
           path: |
-            datos/procesados/arima/
-            graficas/arima/
+            modulos/expansion/datos/procesados/arima/
+            modulos/expansion/graficas/arima/
