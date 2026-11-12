@@ -1,0 +1,5 @@
+outs:
+- md5: cc0081514525f1db7feae891208845cf
+  size: 36630528
+  hash: md5
+  path: firms_altillanura_puntos.gpkg
