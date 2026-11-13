@@ -1,0 +1,6 @@
+outs:
+- md5: 1a31f9f2010e71fcd30e09ce4cea9e4b.dir
+  size: 31324
+  nfiles: 35
+  hash: md5
+  path: agua

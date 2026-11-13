@@ -1,0 +1,6 @@
+outs:
+- md5: 690c36c5a2e592734ef924691f84f765.dir
+  size: 64451
+  nfiles: 7
+  hash: md5
+  path: fuego_municipal

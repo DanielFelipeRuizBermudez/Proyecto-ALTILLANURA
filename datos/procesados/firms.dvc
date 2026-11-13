@@ -1,0 +1,6 @@
+outs:
+- md5: 842579be695f7e263e3cb1d84eafcf10.dir
+  size: 73331102
+  nfiles: 3
+  hash: md5
+  path: firms

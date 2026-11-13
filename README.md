@@ -1,5 +1,13 @@
 # Proyecto Altillanura
 
+## Catálogo de datos
+
+Consulta los conjuntos, sus fuentes, el diccionario de campos y las observaciones en el [Catálogo de datos — Proyecto Altillanura](https://docs.google.com/spreadsheets/d/1T1QwQ_owkuL7xXKiJZ-TC4gWqxH6U16hi_ZROgHpj-8/edit?usp=sharing).
+
+Los datos versionados se recuperan desde Google Cloud Storage con DVC. Los punteros están en `datos/crudos/`, `datos/procesados/` y `datos/derivados/`. Desde la raíz, ejecuta `dvc pull -r gcs` para recuperar todos los conjuntos o indica la ruta de un archivo `.dvc` para descargar solo ese conjunto.
+
+## Alcance del proyecto
+
 **Pregunta del proyecto:** ¿cómo se ha transformado la Altillanura y qué papel juegan el clima, el fuego y el suelo en la expansión agrícola?
 
 Siete municipios: Puerto López (50573), Puerto Gaitán (50568) y Mapiripán (50325) en el Meta; Puerto Carreño (99001), La Primavera (99524), Santa Rosalía (99624) y Cumaribo (99773) en el Vichada.

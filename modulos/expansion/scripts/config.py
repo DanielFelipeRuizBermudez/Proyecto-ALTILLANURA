@@ -1,10 +1,12 @@
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
-DATOS = RAIZ / "datos"
-MAPBIOMAS_CRUDOS = DATOS / "mapbiomas_crudos"
-EVA = DATOS / "eva"
-PROCESADOS = DATOS / "procesados"
+DATOS = RAIZ.parents[1] / "datos"
+COBERTURA_MUNICIPAL = DATOS / "crudos" / "mapbiomas" / "cobertura_municipal"
+MAPBIOMAS_CRUDOS = COBERTURA_MUNICIPAL / "tablas"
+MAPAS_TIF = COBERTURA_MUNICIPAL / "geotiff_2024"
+EVA = DATOS / "procesados" / "eva"
+PROCESADOS = DATOS / "derivados" / "expansion"
 
 MUNICIPIOS = {
     50573: ("Puerto López", "Meta"),

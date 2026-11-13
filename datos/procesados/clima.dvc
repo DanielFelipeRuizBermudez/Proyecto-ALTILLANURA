@@ -1,0 +1,6 @@
+outs:
+- md5: 0bc5fc4a158d1387041dd867b461f062.dir
+  size: 412532
+  nfiles: 2
+  hash: md5
+  path: clima

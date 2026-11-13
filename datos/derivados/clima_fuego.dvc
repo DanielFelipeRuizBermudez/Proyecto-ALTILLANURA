@@ -1,0 +1,6 @@
+outs:
+- md5: 87625ddb8f077f0ba296cf1866e45d12.dir
+  size: 3102
+  nfiles: 2
+  hash: md5
+  path: clima_fuego

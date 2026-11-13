@@ -1,0 +1,6 @@
+outs:
+- md5: 3ea2f2872c2c55636fa6d730af2bf14a.dir
+  size: 263047
+  nfiles: 4
+  hash: md5
+  path: integracion

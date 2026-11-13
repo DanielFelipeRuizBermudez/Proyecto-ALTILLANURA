@@ -1,0 +1,6 @@
+outs:
+- md5: d2107e836032b217b8e104506fe7bdfd.dir
+  size: 204208419
+  nfiles: 25
+  hash: md5
+  path: cobertura

@@ -27,19 +27,43 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Recuperar datos de MapBiomas
+        id: datos
+        env:
+          GCS_CREDENTIALS: ${{ secrets.GCP_DVC_CREDENTIALS }}
+        run: |
+          if [ -z "$GCS_CREDENTIALS" ]; then
+            echo "::notice::Sin credenciales de GCS; se ejecutarán las pruebas que no requieren los datos remotos."
+            exit 0
+          fi
+          umask 077
+          credentials="$(mktemp)"
+          trap 'rm -f "$credentials"' EXIT
+          printf '%s' "$GCS_CREDENTIALS" > "$credentials"
+          GOOGLE_APPLICATION_CREDENTIALS="$credentials" dvc pull datos/crudos/mapbiomas/cobertura_municipal/tablas.dvc
+          echo "disponibles=true" >> "$GITHUB_OUTPUT"
+
       - name: Pruebas unitarias, de calidad de datos e integración
+        if: steps.datos.outputs.disponibles == 'true'
         run: pytest
 
+      - name: Pruebas sin datos remotos
+        if: steps.datos.outputs.disponibles != 'true'
+        run: pytest --ignore=modulos/expansion/tests/test_calidad_datos.py -k 'not test_de_csv_crudos_a_pronostico_arima'
+
       - name: Expansión - unir los CSV de MapBiomas
+        if: steps.datos.outputs.disponibles == 'true'
         run: python modulos/expansion/scripts/02_unir_mapbiomas.py
 
       - name: Expansión - modelos ARIMA por municipio
+        if: steps.datos.outputs.disponibles == 'true'
         run: python modulos/expansion/scripts/08_arima.py
 
       - name: Guardar resultados de ARIMA
+        if: steps.datos.outputs.disponibles == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: resultados-arima
           path: |
-            modulos/expansion/datos/procesados/arima/
+            datos/derivados/expansion/arima/
             modulos/expansion/graficas/arima/
