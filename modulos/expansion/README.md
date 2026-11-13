@@ -24,13 +24,6 @@ Dos análisis del área agropecuaria de los 7 municipios:
 
 ```
 modulos/expansion/
-├── datos/
-│   ├── mapbiomas_crudos/       CSV descargados de MapBiomas, uno por municipio (en Git)
-│   ├── eva/                    Se llena al correr 01_descargar_eva.py (en Git)
-│   ├── procesados/             Tablas listas para analizar (en DVC)
-│   └── procesados.dvc
-├── mapas_tif/                  Mapas de cobertura 2024 de MapBiomas, uno por municipio (en DVC)
-├── mapas_tif.dvc
 ├── graficas/                   Resultados: series, Moran y ARIMA
 ├── scripts/
 │   ├── config.py               Rutas y lista de municipios
@@ -51,7 +44,13 @@ Las rutas salen de `scripts/config.py` a partir de la ubicación de ese archivo,
 
 ## Cómo correrlo
 
-Desde la raíz del repositorio:
+Desde la raíz del repositorio, recupera los datos de expansión con:
+
+```powershell
+dvc pull datos/crudos/mapbiomas/cobertura_municipal/tablas.dvc datos/crudos/mapbiomas/cobertura_municipal/geotiff_2024.dvc datos/procesados/eva.dvc datos/derivados/expansion.dvc
+```
+
+Para recalcular los resultados, ejecuta:
 
 ```
 python modulos/expansion/scripts/01_descargar_eva.py
@@ -63,18 +62,20 @@ python modulos/expansion/scripts/07_moran_espacial.py
 python modulos/expansion/scripts/08_arima.py
 ```
 
-El paso 01 necesita internet (descarga unos cuantos MB de datos.gov.co). Los pasos 02 y 03 funcionan sin internet. Si el 01 no ha corrido, el 03 igual genera las tablas de MapBiomas y avisa que falta la EVA. El paso 07 necesita los mapas de `mapas_tif/` (`dvc pull`) y el 08 necesita `datos/procesados/mapbiomas_largo.csv`, que sale del 02.
+El paso 01 necesita internet (descarga unos cuantos MB de datos.gov.co). Los pasos 02 y 03 funcionan sin internet. Si el 01 no ha corrido, el 03 igual genera las tablas de MapBiomas y avisa que falta la EVA. El paso 07 necesita los mapas de `datos/crudos/mapbiomas/cobertura_municipal/geotiff_2024/` (`dvc pull`) y el 08 necesita `datos/derivados/expansion/mapbiomas_largo.csv`, que sale del 02.
 
 ## Datos
 
 | Qué | Dónde se versiona | Por qué |
 |---|---|---|
-| `datos/mapbiomas_crudos/`, `datos/eva/` | Git | Son las entradas, pesan menos de 1 MB y GitHub Actions las necesita para correr las pruebas y el ARIMA |
-| `mapas_tif/` | DVC | Son binarios de unos 21 MB |
-| `datos/procesados/` | DVC | Son salidas de los scripts; `celdas_2km.csv` y `celdas_2km_altillanura.csv` pesan casi 7 MB cada una |
+| `datos/crudos/mapbiomas/cobertura_municipal/tablas/`, `datos/procesados/eva/` | DVC | Entradas del análisis y las pruebas |
+| `datos/crudos/mapbiomas/cobertura_municipal/geotiff_2024/` | DVC | Son binarios de unos 21 MB |
+| `datos/derivados/expansion/` | DVC | Son salidas de los scripts; `celdas_2km.csv` y `celdas_2km_altillanura.csv` pesan casi 7 MB cada una |
 | `graficas/` | Git | Son los resultados para revisar en GitHub |
 
 ## Pruebas
+
+En GitHub Actions, el secreto `GCP_DVC_CREDENTIALS` permite descargar las tablas de MapBiomas con una cuenta de lectura del bucket. Si el secreto no está configurado, CI ejecuta las pruebas que pueden correr con datos sintéticos.
 
 | Archivo | Qué revisa |
 |---|---|
@@ -83,7 +84,7 @@ El paso 01 necesita internet (descarga unos cuantos MB de datos.gov.co). Los pas
 | `tests/test_calidad_datos.py` | Que haya un CSV crudo por municipio con los años 1985 a 2024, hectáreas numéricas y no negativas, clases conocidas, sin clases repetidas, área total del municipio constante entre años y cada categoría del nivel 1 igual a la suma de sus clases. Si están los mapas TIF, revisa su sistema de coordenadas, el tamaño del píxel y los códigos de clase. |
 | `tests/test_integracion.py` | El camino completo de los CSV crudos al pronóstico ARIMA de Puerto López, y de un mapa simulado a las zonas de Moran. |
 
-Las pruebas de los mapas TIF se saltan cuando `mapas_tif/` no está, como pasa en GitHub Actions.
+Las pruebas de los mapas TIF se saltan cuando `datos/crudos/mapbiomas/cobertura_municipal/geotiff_2024/` no está, como pasa en GitHub Actions.
 
 ## Gráficas (`graficas/`)
 
@@ -95,7 +96,7 @@ Las pruebas de los mapas TIF se saltan cuando `mapas_tif/` no está, como pasa e
 
 ## Series de la Altillanura (paso 05)
 
-`datos/procesados/series_altillanura.csv` tiene una fila por año y una columna por serie:
+`datos/derivados/expansion/series_altillanura.csv` tiene una fila por año y una columna por serie:
 
 | Serie | Qué mide | Fuente | Años |
 |---|---|---|---|
@@ -114,7 +115,7 @@ Las pruebas de los mapas TIF se saltan cuando `mapas_tif/` no está, como pasa e
 | `eva_rendimiento_maiz`, `eva_rendimiento_soya` | Rendimiento (t/ha) | EVA | 2006–2025 |
 | `pct_area_agropecuaria_cultivada` | Porcentaje del área agropecuaria que es cultivo | EVA + MapBiomas | 2006–2024 |
 
-`datos/procesados/series_altillanura_pruebas.csv` trae, para cada serie, los p-valores de ADF y KPSS en nivel (`d0`), primera diferencia (`d1`) y segunda diferencia (`d2`), y el número de diferencias sugerido (`d_sugerido`): el primer `d` en que ADF rechaza (p < 0,05) y KPSS no rechaza (p ≥ 0,05).
+`datos/derivados/expansion/series_altillanura_pruebas.csv` trae, para cada serie, los p-valores de ADF y KPSS en nivel (`d0`), primera diferencia (`d1`) y segunda diferencia (`d2`), y el número de diferencias sugerido (`d_sugerido`): el primer `d` en que ADF rechaza (p < 0,05) y KPSS no rechaza (p ≥ 0,05).
 
 - ADF: hipótesis nula = la serie NO es estacionaria (tiene raíz unitaria).
 - KPSS: hipótesis nula = la serie SÍ es estacionaria.
@@ -133,7 +134,7 @@ Cada mapa TIF tiene píxeles de unos 30 m con un código de clase. El script los
 - El I de Moran local de cada celda y su zona: Alto-Alto, Bajo-Bajo, Alto-Bajo, Bajo-Alto o No significativo.
 - El correlograma: el I global para vecinas a distintas distancias, de 0–3 km a 40–60 km.
 
-Salidas en `datos/procesados/espacial/`: `celdas_2km.csv`, `celdas_2km_altillanura.csv`, `moran_global.csv`, `correlograma_moran.csv` y `zonas_lisa.csv`.
+Salidas en `datos/derivados/expansion/espacial/`: `celdas_2km.csv`, `celdas_2km_altillanura.csv`, `moran_global.csv`, `correlograma_moran.csv` y `zonas_lisa.csv`.
 
 ## Modelos ARIMA (paso 08)
 
@@ -144,9 +145,9 @@ Para cada municipio y la Altillanura completa, sobre el área agropecuaria anual
 3. Se queda con el de menor AICc que tenga raíces fuera del círculo unitario, coeficientes significativos y residuos sin autocorrelación (Ljung-Box); entre los que están a menos de 2 de AICc prefiere el que además pasa normalidad (Shapiro-Wilk y Jarque-Bera) y homocedasticidad (ARCH-LM).
 4. Valida con los últimos 5 años y pronostica de 2025 a 2030.
 
-Salidas en `datos/procesados/arima/`: `modelos.csv`, `candidatos.csv`, `estacionariedad.csv`, `coeficientes.csv`, `raices.csv`, `pronosticos.csv` y `series_modeladas.csv`.
+Salidas en `datos/derivados/expansion/arima/`: `modelos.csv`, `candidatos.csv`, `estacionariedad.csv`, `coeficientes.csv`, `raices.csv`, `pronosticos.csv` y `series_modeladas.csv`.
 
-## Archivos en `datos/procesados/`
+## Archivos en `datos/derivados/expansion/`
 
 | Archivo | Una fila es | Para qué |
 |---|---|---|

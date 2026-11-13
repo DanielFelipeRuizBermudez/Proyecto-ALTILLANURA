@@ -4,11 +4,11 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from config import MAPBIOMAS_CRUDOS, MUNICIPIOS, RAIZ
+from config import MAPAS_TIF, MAPBIOMAS_CRUDOS, MUNICIPIOS
 
 ANIOS = [str(anio) for anio in range(1985, 2025)]
 CRUDOS = sorted(MAPBIOMAS_CRUDOS.glob("*.csv"))
-MAPAS = sorted((RAIZ / "mapas_tif").glob("*.tif"))
+MAPAS = sorted(MAPAS_TIF.glob("*.tif"))
 PIXEL_GRADOS = 0.00026949458523585647
 
 

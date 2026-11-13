@@ -13,9 +13,9 @@ from scipy import sparse
 from scipy.spatial import cKDTree
 
 import estilo
-from config import MUNICIPIOS, PROCESADOS, RAIZ
+from config import MAPAS_TIF, MUNICIPIOS, PROCESADOS, RAIZ
 
-MAPAS = RAIZ / "mapas_tif"
+MAPAS = MAPAS_TIF
 SALIDA_DATOS = PROCESADOS / "espacial"
 SALIDA_GRAFICAS = RAIZ / "graficas" / "espacial"
 

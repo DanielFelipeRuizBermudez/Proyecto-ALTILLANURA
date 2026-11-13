@@ -168,8 +168,8 @@ def main():
     pruebas = pd.DataFrame(filas)
     pruebas.to_csv(PROCESADOS / "series_altillanura_pruebas.csv", index=False, encoding="utf-8-sig")
 
-    print(f"Series guardadas en datos/procesados/series_altillanura.csv ({len(nombres)} series)")
-    print(f"Pruebas guardadas en datos/procesados/series_altillanura_pruebas.csv")
+    print(f"Series guardadas en {PROCESADOS / 'series_altillanura.csv'} ({len(nombres)} series)")
+    print(f"Pruebas guardadas en {PROCESADOS / 'series_altillanura_pruebas.csv'}")
     print(f"Gráficas guardadas en graficas/series_altillanura/\n")
     with pd.option_context("display.width", 200, "display.max_columns", 20):
         print(pruebas[["serie", "fuente", "desde", "hasta", "n", "d_sugerido"]].to_string(index=False))

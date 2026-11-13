@@ -12,3 +12,17 @@ env/
 Thumbs.db
 desktop.ini
 ~$*
+
+# DVC conserva los datos en GCS. Git conserva los punteros y las reglas.
+/datos/crudos/**
+/datos/derivados/**
+/datos/procesados/**
+!/datos/crudos/**/
+!/datos/derivados/**/
+!/datos/procesados/**/
+!/datos/crudos/**/*.dvc
+!/datos/derivados/**/*.dvc
+!/datos/procesados/**/*.dvc
+!/datos/crudos/**/.gitignore
+!/datos/derivados/**/.gitignore
+!/datos/procesados/**/.gitignore

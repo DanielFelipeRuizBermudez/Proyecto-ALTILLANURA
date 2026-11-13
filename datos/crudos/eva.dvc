@@ -1,0 +1,6 @@
+outs:
+- md5: e9e426610be7bf96ed5bfd9c09c30d6b.dir
+  size: 69233295
+  nfiles: 3
+  hash: md5
+  path: eva

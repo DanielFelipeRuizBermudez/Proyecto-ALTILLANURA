@@ -3,4 +3,4 @@ outs:
   size: 21087112
   nfiles: 7
   hash: md5
-  path: mapas_tif
+  path: geotiff_2024

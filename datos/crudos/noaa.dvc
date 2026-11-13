@@ -1,0 +1,6 @@
+outs:
+- md5: 50b1a372a117764ed23d6accf9e20913.dir
+  size: 18709
+  nfiles: 1
+  hash: md5
+  path: noaa

@@ -1,0 +1,6 @@
+outs:
+- md5: 717c764979ae7d6dedb72b49936f235c.dir
+  size: 69894855
+  nfiles: 26
+  hash: md5
+  path: fuego

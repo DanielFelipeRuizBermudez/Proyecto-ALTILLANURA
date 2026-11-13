@@ -1,0 +1,6 @@
+outs:
+- md5: a00af6074c3e802f32563288340a689b.dir
+  size: 123602
+  nfiles: 7
+  hash: md5
+  path: tablas
