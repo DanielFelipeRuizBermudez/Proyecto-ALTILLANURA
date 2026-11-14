@@ -1,0 +1,12 @@
+,,coef,p
+SARIMA,ar.L1,0.25318,6e-05
+SARIMA,ma.S.L12,-0.9555,0.0
+SARIMA,sigma2,0.14532,0.0
+SARIMAX lluvia,lluvia_anom_mm,-0.00516,0.0
+SARIMAX lluvia,ar.L1,0.27018,2e-05
+SARIMAX lluvia,ma.S.L12,-0.83716,0.0
+SARIMAX lluvia,sigma2,0.10921,0.0
+SARIMAX ONI rezago 2,oni_rez2,0.01546,0.64702
+SARIMAX ONI rezago 2,ar.L1,0.25289,6e-05
+SARIMAX ONI rezago 2,ma.S.L12,-0.95494,0.0
+SARIMAX ONI rezago 2,sigma2,0.14528,0.0

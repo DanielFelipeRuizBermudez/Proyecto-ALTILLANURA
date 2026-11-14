@@ -1,0 +1,5 @@
+outs:
+- md5: 353dc72ce76dd3b4b63d6c131426c28e
+  size: 3080192
+  hash: md5
+  path: altillanura_municipios.gpkg
