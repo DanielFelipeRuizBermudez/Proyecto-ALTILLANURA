@@ -2,11 +2,16 @@
 import pandas as pd
 from scipy import stats
 
+import config as cfg
 from utils import mann_kendall
 
 
 SERIES_TENDENCIA = {
-    "focos_seca_terra": "Focos MODIS dic-mar (Terra)",
+    # FIRMS: Terra + Aqua es la serie principal. Terra sola es sensibilidad: pierde detecciones
+    # en 2024-2025 por la deriva de su órbita. "mismo periodo" separa ese efecto del cambio de años.
+    "focos_seca_total": "Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",
+    "focos_seca_terra": "Focos FIRMS dic-mar (solo Terra, desde 2001)",
+    "focos_seca_terra_mismo_periodo": "Focos FIRMS dic-mar (solo Terra, desde 2003)",
     "quem_total_ha": "Área quemada total (ha)",
     "quem_natural_ha": "Vegetación natural no forestal quemada (ha)",
     "quem_agro_ha": "Área agropecuaria quemada (ha)",
@@ -37,7 +42,16 @@ def composicion(p):
     return t.round(3).sort_values("quemado_medio_ha", ascending=False)
 
 
+def _con_terra_mismo_periodo(df):
+    """Agrega Terra solo en los años en que existe Terra + Aqua, para comparar ambas series."""
+    df = df.copy()
+    df["focos_seca_terra_mismo_periodo"] = df["focos_seca_terra"].where(df["anio"] >= cfg.ANIO_INI_TOTAL)
+    return df
+
+
 def tendencias(p, reg):
+    p = _con_terra_mismo_periodo(p)
+    reg = _con_terra_mismo_periodo(reg)
     filas = []
     for var, etq in SERIES_TENDENCIA.items():
         tau, pv, sen = mann_kendall(reg[var].to_numpy(), reg["anio"].to_numpy())
