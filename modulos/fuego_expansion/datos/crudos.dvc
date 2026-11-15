@@ -1,0 +1,6 @@
+outs:
+- md5: b5a962830d65d309a5371cdd9b6f6951.dir
+  size: 274180955
+  nfiles: 65
+  hash: md5
+  path: crudos
