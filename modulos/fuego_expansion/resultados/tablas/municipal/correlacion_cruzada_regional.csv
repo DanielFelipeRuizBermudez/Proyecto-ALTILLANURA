@@ -1,0 +1,13 @@
+tratamiento,variable,p_ar,rezago,r,n_pares,banda95,significativo,escala
+sin quitar tendencia,tasa_quema_natural,0,-1,-0.13733966521347463,23,0.40868825155186655,False,Territorio previo (pp)
+sin quitar tendencia,tasa_quema_natural,0,0,-0.0536106742519553,24,0.4000833246545858,False,Territorio previo (pp)
+sin quitar tendencia,tasa_quema_natural,0,1,0.21229093943810506,23,0.40868825155186655,False,Territorio previo (pp)
+tendencia lineal removida,tasa_quema_natural,0,-1,-0.361892970371811,23,0.40868825155186655,False,Territorio previo (pp)
+tendencia lineal removida,tasa_quema_natural,0,0,-0.20255618973267464,24,0.4000833246545858,False,Territorio previo (pp)
+tendencia lineal removida,tasa_quema_natural,0,1,0.11454265467756147,23,0.40868825155186655,False,Territorio previo (pp)
+sin quitar tendencia,tasa_quema_natural,0,-1,-0.32228402519199034,23,0.40868825155186655,False,Agro previo (%)
+sin quitar tendencia,tasa_quema_natural,0,0,-0.18211813934636345,24,0.4000833246545858,False,Agro previo (%)
+sin quitar tendencia,tasa_quema_natural,0,1,0.15309061471663152,23,0.40868825155186655,False,Agro previo (%)
+tendencia lineal removida,tasa_quema_natural,0,-1,-0.4260645813868918,23,0.40868825155186655,True,Agro previo (%)
+tendencia lineal removida,tasa_quema_natural,0,0,-0.2451140009928534,24,0.4000833246545858,False,Agro previo (%)
+tendencia lineal removida,tasa_quema_natural,0,1,0.1140524636791011,23,0.40868825155186655,False,Agro previo (%)
