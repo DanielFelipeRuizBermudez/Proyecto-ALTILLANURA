@@ -21,7 +21,7 @@ Este módulo usa el entorno y los datos del repositorio completo (ver el README 
 
 4. [53 · Predicción regional](../../notebooks/50_vinculos/53_prediccion_regional.ipynb) compara un ARIMA de referencia con modelos que incorporan lluvia y quema rezagadas. No se verificó la disponibilidad histórica de los insumos al momento del pronóstico; queda como observación al inicio del cuaderno.
 
-Los cuadernos 23, 50 y 52 guardan las salidas vigentes del panel en `datos/derivados/municipal/`, `resultados/tablas/municipal/` y `resultados/figuras/municipal/`. Las salidas del panel que se encuentran directamente en las carpetas superiores corresponden al planteamiento anterior.
+Los cuadernos 23, 50 y 52 guardan las salidas vigentes del panel en `datos/derivados/municipal/`, `resultados/tablas/municipal/` y `resultados/figuras/municipal/`. Las salidas del planteamiento anterior que estaban directamente en `resultados/tablas/` y `resultados/figuras/` se eliminaron.
 
 ### Análisis espacial de Cumaribo
 
