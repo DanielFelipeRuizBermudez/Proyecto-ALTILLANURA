@@ -1,0 +1,5 @@
+outs:
+- md5: 68fbbb74f682bdd37346f93b2da4221e
+  size: 1195093
+  hash: md5
+  path: focos_celda.csv
