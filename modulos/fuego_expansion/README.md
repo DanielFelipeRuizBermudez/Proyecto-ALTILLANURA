@@ -6,19 +6,26 @@ El análisis municipal cubre Mapiripán, Puerto Gaitán, Puerto López, Puerto C
 
 ## Cómo ejecutar
 
-El proyecto usa Python 3.12 y `uv`. Desde la raíz, ejecuta `uv run --with jupyterlab jupyter lab` y abre los notebooks en orden con el kernel Python 3. También puedes usar `uv sync` y seleccionar el intérprete de `.venv` en un editor con soporte para Jupyter.
+Este módulo usa el entorno y los datos del repositorio completo (ver el README de la raíz). Se probó en local con Python 3.12.
+
+1. Desde la raíz del repositorio, instala las dependencias con `pip install -r requirements.txt`.
+2. Baja los datos pesados con `dvc pull`. Este módulo lee de tres lugares:
+   - `modulos/fuego_expansion/datos/crudos/` (MapBiomas Fuego, pérdida de vegetación y TIFF de Cumaribo; puntero `datos/crudos.dvc`).
+   - `datos/comunes/` (FIRMS, CHIRPS y ONI mensuales por municipio).
+   - `modulos/expansion/datos/procesados/` (coberturas MapBiomas y EVA, del módulo de expansión).
+3. Abre Jupyter desde `modulos/fuego_expansion/` o desde su carpeta `notebooks/` y ejecuta los notebooks en orden. Los datos derivados se escriben en `datos/derivados/`, que Git ignora y se regenera al ejecutar.
 
 1. [Datos y exploración](notebooks/01_datos_y_exploracion.ipynb) arma el panel de 168 filas, la serie regional y los descriptivos.
 2. [Quema por cobertura](notebooks/02_quema_por_cobertura.ipynb) compara composición, tasas de quema y tendencias.
 3. [Asociación municipal](notebooks/03_asociacion_municipal.ipynb) compara dos escalas de cambio agropecuario en el panel y en la exploración regional.
 
-4. [Predicción regional](notebooks/04_prediccion_regional.ipynb) compara un ARIMA de referencia con modelos que incorporan lluvia y quema rezagadas. Ejecuta primero el notebook 01 y abre Jupyter con `uv run --extra prediccion --with jupyterlab jupyter lab`. La disponibilidad histórica de los insumos queda pendiente de verificar.
+4. [Predicción regional](notebooks/04_prediccion_regional.ipynb) compara un ARIMA de referencia con modelos que incorporan lluvia y quema rezagadas. Ejecuta primero el notebook 01. La disponibilidad histórica de los insumos queda pendiente de verificar.
 
-Los notebooks 01–03 guardan las salidas vigentes del panel en `datos/derivados/municipal/`, `resultados/tablas/municipal/` y `resultados/figuras/municipal/`. Las salidas del panel que se encuentran directamente en las carpetas superiores corresponden al planteamiento anterior. [Comentarios históricos](comentarios.md)
+Los notebooks 01–03 guardan las salidas vigentes del panel en `datos/derivados/municipal/`, `resultados/tablas/municipal/` y `resultados/figuras/municipal/`. Las salidas del panel que se encuentran directamente en las carpetas superiores corresponden al planteamiento anterior.
 
 ### Análisis espacial de Cumaribo
 
-Abre el [notebook 05](notebooks/05_conversion_espacial_cumaribo.ipynb) con `uv run --extra espacial --with jupyterlab jupyter lab` o instala el extra espacial con `uv sync --extra espacial`. Este notebook puede ejecutarse por separado. Lee los TIFF en `datos/crudos/mapbiomas_coverage_cumaribo_tiff/` y `datos/crudos/mapbiomas_fire_cumaribo_tiff/`. El nombre de cada archivo empieza por el año.
+El [notebook 05](notebooks/05_conversion_espacial_cumaribo.ipynb) necesita `rasterio`, que ya está en el `requirements.txt` de la raíz. Puede ejecutarse por separado. Lee los TIFF en `datos/crudos/mapbiomas_coverage_cumaribo_tiff/` y `datos/crudos/mapbiomas_fire_cumaribo_tiff/`. El nombre de cada archivo empieza por el año.
 
 El notebook genera un mapa de primera conversión de praderas, tasas según quema previa y Moran local de tasas de conversión en celdas de 2 km. Sus salidas se guardan en las subcarpetas `cumaribo/` de datos derivados, tablas y figuras.
 
