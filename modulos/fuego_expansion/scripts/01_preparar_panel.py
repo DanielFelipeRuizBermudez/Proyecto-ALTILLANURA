@@ -132,9 +132,10 @@ def focos() -> pd.DataFrame:
     b.columns = ["focos_anual_terra", "focos_anual_total"]
     b.index.names = ["cod_mun", "anio"]
     out = a.join(b, how="outer").reset_index()
-    # la temporada 2001 es la primera completa (la serie empieza en 2000-11)
-    # Aqua opera desde mediados de 2002: el total Terra+Aqua solo es comparable desde 2004
-    out.loc[out["anio"] < 2004, ["focos_seca_total", "focos_anual_total"]] = np.nan
+    # La temporada 2001 es la primera completa (la serie empieza en 2000-11).
+    # focos_*_total (Terra + Aqua) es la serie principal y solo es comparable desde
+    # cfg.ANIO_INI_TOTAL; focos_*_terra (solo Terra) queda como sensibilidad desde 2001.
+    out.loc[out["anio"] < cfg.ANIO_INI_TOTAL, ["focos_seca_total", "focos_anual_total"]] = np.nan
     out.loc[out["anio"] < cfg.ANIO_INI, ["focos_seca_terra", "focos_seca_total"]] = np.nan
     return out
 
@@ -197,8 +198,11 @@ def construir_panel() -> pd.DataFrame:
 
     # Densidades por municipio y tasas por cobertura.
     km2 = panel["area_total_ha"] / 100
-    panel["focos_seca_dens"] = panel["focos_seca_terra"] / km2 * 100      # focos por 100 km2
-    panel["focos_anual_dens"] = panel["focos_anual_terra"] / km2 * 100
+    # Focos por 100 km2: Terra + Aqua (principal, desde 2003) y solo Terra (sensibilidad, desde 2001).
+    panel["focos_seca_dens"] = panel["focos_seca_total"] / km2 * 100
+    panel["focos_anual_dens"] = panel["focos_anual_total"] / km2 * 100
+    panel["focos_seca_terra_dens"] = panel["focos_seca_terra"] / km2 * 100
+    panel["focos_anual_terra_dens"] = panel["focos_anual_terra"] / km2 * 100
     panel["quem_total_pct"] = panel["quem_total_ha"] / panel["area_total_ha"] * 100
     panel["quem_agro_pct"] = panel["quem_agro_ha"] / panel["area_total_ha"] * 100
     panel["quem_natural_pct"] = panel["quem_natural_ha"] / panel["area_total_ha"] * 100
@@ -208,7 +212,7 @@ def construir_panel() -> pd.DataFrame:
 
     panel["fuego_calidad_limitada"] = panel["anio"].isin(cfg.ANIOS_FUEGO_LIMITADOS)
     rezago = panel[["cod_mun", "anio", "tasa_quema_natural", "focos_seca_dens",
-                    "fuego_calidad_limitada"]].copy()
+                    "focos_seca_terra_dens", "fuego_calidad_limitada"]].copy()
     rezago["anio"] += 1
     rezago = rezago.rename(columns={c: f"{c}_rez1" for c in rezago.columns[2:]})
     panel = panel.merge(rezago, on=["cod_mun", "anio"], how="left", validate="one_to_one")
@@ -225,13 +229,15 @@ def serie_regional(panel: pd.DataFrame) -> pd.DataFrame:
            "area_total_ha_rez1", "agro_ha_rez1",
            "quem_agro_ha", "quem_natural_ha", "quem_bosque_ha", "quem_sin_veg_ha", "quem_total_ha",
            "perdida_primaria_ha", "perdida_secundaria_ha", "perdida_total_ha",
-           "focos_seca_terra", "focos_anual_terra", "eva_sembrada_ha"]
+           "focos_seca_total", "focos_anual_total", "focos_seca_terra", "focos_anual_terra",
+           "eva_sembrada_ha"]
     reg = panel.groupby("anio")[ext].sum(min_count=1).reset_index()
     km2r = reg["area_total_ha"] / 100
     reg["d_agro_pct"] = 100 * reg["d_agro_ha"] / reg["area_total_ha_rez1"].where(reg["area_total_ha_rez1"] > 0)
     reg["crec_agro_pct"] = 100 * reg["d_agro_ha"] / reg["agro_ha_rez1"].where(reg["agro_ha_rez1"] > 0)
     reg["d_natural_pct"] = reg["d_natural_ha"] / reg["area_total_ha"] * 100
-    reg["focos_seca_dens"] = reg["focos_seca_terra"] / km2r * 100
+    reg["focos_seca_dens"] = reg["focos_seca_total"] / km2r * 100
+    reg["focos_seca_terra_dens"] = reg["focos_seca_terra"] / km2r * 100
     reg["quem_total_pct"] = reg["quem_total_ha"] / reg["area_total_ha"] * 100
     reg["tasa_quema_agro"] = reg["quem_agro_ha"] / reg["agro_ha"] * 100
     reg["tasa_quema_natural"] = reg["quem_natural_ha"] / reg["natural_ha"] * 100
