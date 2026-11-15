@@ -1,11 +1,17 @@
 """Rutas, municipios y parámetros comunes de todos los scripts."""
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parents[1]
+RAIZ = Path(__file__).resolve().parents[1]  # modulos/fuego_expansion
+REPO = RAIZ.parents[1]
+
+# Datos propios del módulo: crudos (DVC) y derivados (se regeneran con los scripts).
 DATOS = RAIZ / "datos"
 CRUDOS = DATOS / "crudos"
-PROCESADOS = DATOS / "procesados"
 DERIVADOS = DATOS / "derivados"
+
+# Datos de otras partes del proyecto.
+COMUNES = REPO / "datos" / "comunes"
+EXPANSION = REPO / "modulos" / "expansion" / "datos" / "procesados"
 TABLAS = RAIZ / "resultados" / "tablas"
 FIGURAS = RAIZ / "resultados" / "figuras"
 

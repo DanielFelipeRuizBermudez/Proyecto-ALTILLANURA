@@ -1,14 +1,17 @@
 """Funciones para armar el panel municipio-año (2001-2024) con todas las fuentes.
 
-Entradas (datos/):
-  procesados/mapbiomas_eva/mapbiomas_nivel_1_ancho.csv   cobertura MapBiomas
-  procesados/mapbiomas_eva/mapbiomas_nivel_2_ancho.csv   plantación forestal
-  procesados/mapbiomas_eva/cruce_mapbiomas_eva.csv       EVA (área sembrada)
-  crudos/mapbiomas_fuego/fuego_<mpio>.csv                área quemada por clase
-  crudos/perdida_vegetacion/perdida_veg_<mpio>.csv       supresión de vegetación
-  procesados/firms_mensual_municipio.csv                 focos de calor MODIS
-  procesados/chirps_mensual_municipio.csv                lluvia mensual
-  procesados/oni_mensual.csv                             índice ONI
+Entradas:
+  modulos/expansion/datos/procesados/ (Daniel)
+    mapbiomas_nivel_1_ancho.csv   cobertura MapBiomas
+    mapbiomas_nivel_2_ancho.csv   plantación forestal
+    cruce_mapbiomas_eva.csv       EVA (área sembrada)
+  datos/comunes/ (datos comunes del proyecto)
+    firms_mensual_municipio.csv   focos de calor MODIS
+    chirps_mensual_municipio.csv  lluvia mensual
+    oni_mensual.csv               índice ONI
+  modulos/fuego_expansion/datos/crudos/ (DVC)
+    mapbiomas_fuego/fuego_<mpio>.csv                área quemada por clase
+    perdida_vegetacion/perdida_veg_<mpio>.csv       supresión de vegetación
 
 Devuelve el panel de 7 municipios x 24 años y permite agregar la serie regional.
 """
@@ -24,7 +27,7 @@ CODIGOS = list(cfg.MUNICIPIOS)
 
 # ----------------------------------------------------------- MapBiomas
 def cobertura() -> pd.DataFrame:
-    d = leer_csv(cfg.PROCESADOS / "mapbiomas_eva" / "mapbiomas_nivel_1_ancho.csv")
+    d = leer_csv(cfg.EXPANSION / "mapbiomas_nivel_1_ancho.csv")
     d = d[d["cod_mun"].isin(CODIGOS)].copy()
     cols = {
         "Zona agrícola y ganadera": "agro_ha",
@@ -33,7 +36,7 @@ def cobertura() -> pd.DataFrame:
         "Cuerpo de agua": "agua_ha",
         "Zona sin vegetación": "sin_veg_ha",
     }
-    nivel2 = leer_csv(cfg.PROCESADOS / "mapbiomas_eva" / "mapbiomas_nivel_2_ancho.csv")
+    nivel2 = leer_csv(cfg.EXPANSION / "mapbiomas_nivel_2_ancho.csv")
     d = d.merge(nivel2[["cod_mun", "anio", "Plantación forestal"]],
                 on=["cod_mun", "anio"], how="left", validate="one_to_one")
     d = d.rename(columns=cols)
@@ -115,7 +118,7 @@ def _anio_temporada(mes: pd.Series) -> pd.Series:
 
 
 def focos() -> pd.DataFrame:
-    d = leer_csv(cfg.PROCESADOS / "firms_mensual_municipio.csv")
+    d = leer_csv(cfg.COMUNES / "firms_mensual_municipio.csv")
     d = d.rename(columns={"mpio_cdpmp": "cod_mun"})
     p = pd.PeriodIndex(d["mes"], freq="M")
     d["mes_num"] = p.month
@@ -138,7 +141,7 @@ def focos() -> pd.DataFrame:
 
 # ------------------------------------------------------------------ lluvia
 def lluvia() -> pd.DataFrame:
-    d = leer_csv(cfg.PROCESADOS / "chirps_mensual_municipio.csv").rename(columns={"mpio_cdpmp": "cod_mun"})
+    d = leer_csv(cfg.COMUNES / "chirps_mensual_municipio.csv").rename(columns={"mpio_cdpmp": "cod_mun"})
     p = pd.PeriodIndex(d["mes"], freq="M")
     d["mes_num"] = p.month
     d["anio_cal"] = p.year
@@ -162,7 +165,7 @@ def lluvia() -> pd.DataFrame:
 
 # --------------------------------------------------------------------- ONI
 def oni() -> pd.DataFrame:
-    d = leer_csv(cfg.PROCESADOS / "oni_mensual.csv", parse_dates=["fecha"])
+    d = leer_csv(cfg.COMUNES / "oni_mensual.csv", parse_dates=["fecha"])
     d["anio_cal"] = d["fecha"].dt.year
     d["mes"] = d["fecha"].dt.month
     filas = []
@@ -177,7 +180,7 @@ def oni() -> pd.DataFrame:
 
 # --------------------------------------------------------------------- EVA
 def eva() -> pd.DataFrame:
-    d = leer_csv(cfg.PROCESADOS / "mapbiomas_eva" / "cruce_mapbiomas_eva.csv")
+    d = leer_csv(cfg.EXPANSION / "cruce_mapbiomas_eva.csv")
     return d[["cod_mun", "anio", "eva_total_area_sembrada_ha"]].rename(
         columns={"eva_total_area_sembrada_ha": "eva_sembrada_ha"}
     )
