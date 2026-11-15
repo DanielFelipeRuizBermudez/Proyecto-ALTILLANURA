@@ -8,7 +8,8 @@ import pandas as pd
 import rasterio
 from rasterio.windows import Window
 from rasterio.warp import transform
-from scipy.stats import false_discovery_control
+
+from utils import fdr_bh
 
 PRADERA = 12
 AGRO = (9, 21, 35)
@@ -176,7 +177,7 @@ def moran_local(celdas, minimo_ha_anio=100, permutaciones=999, semilla=42):
         simulado = z[i] * z[muestra + (muestra >= i)].mean(axis=1)
         extremos = np.count_nonzero(np.abs(simulado - esperado[i]) >= abs(local[i] - esperado[i]) - 1e-12)
         p[i] = (extremos + 1) / (permutaciones + 1)
-    q = false_discovery_control(p, method="bh")
+    q = fdr_bh(p)
     cuadrante = np.select(
         [(z > 0) & (lag > 0), (z < 0) & (lag < 0), (z > 0) & (lag < 0), (z < 0) & (lag > 0)],
         ["Alto–alto", "Bajo–bajo", "Alto–bajo", "Bajo–alto"], default="Sin cuadrante")

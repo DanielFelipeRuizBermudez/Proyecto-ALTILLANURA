@@ -13,6 +13,25 @@ def leer_csv(ruta, **kw) -> pd.DataFrame:
     return pd.read_csv(ruta, encoding="utf-8-sig", **kw)
 
 
+# ------------------------------------------------------------ estadística
+def fdr_bh(p) -> np.ndarray:
+    """Valores q de Benjamini-Hochberg (control de la tasa de falsos descubrimientos).
+
+    Reemplaza a scipy.stats.false_discovery_control(p, method="bh"), que exige
+    scipy >= 1.11 (requirements.txt pide >= 1.10). Admite solo un vector 1-D sin NaN.
+    """
+    p = np.asarray(p, dtype=float)
+    if p.ndim != 1 or np.isnan(p).any() or ((p < 0) | (p > 1)).any():
+        raise ValueError("p debe ser un vector 1-D de valores entre 0 y 1, sin NaN.")
+    n = p.size
+    orden = np.argsort(p)
+    q = p[orden] * n / np.arange(1, n + 1)
+    q = np.minimum.accumulate(q[::-1])[::-1]
+    salida = np.empty(n)
+    salida[orden] = np.minimum(q, 1.0)
+    return salida
+
+
 # ---------------------------------------------------------- transformación
 def zscore_por_grupo(df: pd.DataFrame, cols, grupo="cod_mun") -> pd.DataFrame:
     """Estandariza cada columna dentro de cada municipio (media 0, desv. 1)."""
