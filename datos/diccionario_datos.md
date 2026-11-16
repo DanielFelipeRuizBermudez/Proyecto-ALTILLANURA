@@ -75,6 +75,22 @@ Una fila por celda y año (34.763 × 11). Llave: `id_celda` + `anio`.
 | `anio` | Año calendario, 2015 a 2025 | año | MapBiomas Fuego |
 | `quema_pct` | Fracción de la celda quemada ese año | % del área | MapBiomas Fuego |
 
+### `modulos/fuego_expansion/resultados/tablas/cumaribo/tasas_celdas_2km.csv` (cuaderno 51)
+Una fila por celda de la grilla común con pradera elegible en los mapas de Cumaribo. Llave: `id_celda`. Fuente: mapas anuales de cobertura y fuego de MapBiomas, conversiones de 2001-2023. `moran_local_2km.csv` (DVC) tiene las mismas columnas más las de Moran local, solo para las celdas con al menos 100 ha-año de pradera y algún vecino.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `id_celda` | Llave de la grilla común | texto | grilla_2km.gpkg (cuaderno 02) |
+| `mpio_cdpmp` | Código DIVIPOLA del municipio de la celda; las celdas del límite pueden ser de un municipio vecino | texto, 5 dígitos | grilla_2km.gpkg |
+| `area_km2` | Área de la celda dentro de la Altillanura | km² | grilla_2km.gpkg |
+| `x_m`, `y_m` | Centro del cuadrado de 2 km en EPSG:9377 | m | cuaderno 51 |
+| `pradera_ha_anio` | Pradera elegible acumulada: una hectárea disponible diez años aporta diez | ha-año | MapBiomas cobertura |
+| `conversion_ha` | Primeras conversiones persistentes de pradera a uso agropecuario | ha | MapBiomas cobertura |
+| `conversion_por_1000_ha_anio` | `conversion_ha` por cada 1.000 ha-año de pradera elegible | ha por 1.000 ha-año | cuaderno 51 |
+| `moran_local`, `p_perm`, `q_fdr` | Moran local, valor p por 9.999 permutaciones y valor q de Benjamini-Hochberg | adimensional | cuaderno 51 |
+| `vecinos` | Celdas vecinas (vecindad reina) incluidas en el cálculo | celdas | cuaderno 51 |
+| `cuadrante`, `grupo_moran` | Cuadrante de Moran y grupo que se muestra (cuadrante si q < 0,05) | categoría | cuaderno 51 |
+
 ### Panel municipio × año (`01_preparar_panel.construir_panel()`, cuadernos 23, 50, 52 y 53)
 Una fila por municipio y año (7 × 24 = 168 filas, 2001-2024). Llave: `cod_mun` + `anio`. Los cuadernos lo construyen en memoria; el cuaderno 52 deja una copia en `modulos/fuego_expansion/datos/derivados/municipal/panel_municipio_anio.csv`, que Git ignora y se regenera. El sufijo `_rez1` indica el valor del año anterior.
 
