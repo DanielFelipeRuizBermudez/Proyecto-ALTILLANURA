@@ -1,0 +1,5 @@
+outs:
+- md5: a0e3663ae603e05cd14d7bdf289f90b3
+  size: 1614807
+  hash: md5
+  path: lluvia_celda.csv
