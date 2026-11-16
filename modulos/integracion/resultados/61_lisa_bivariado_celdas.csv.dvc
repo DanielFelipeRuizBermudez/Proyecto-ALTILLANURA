@@ -1,0 +1,5 @@
+outs:
+- md5: 96dd745fb04cd7e1186ef0f02ed61d8d
+  size: 1384519
+  hash: md5
+  path: 61_lisa_bivariado_celdas.csv

@@ -1,0 +1,5 @@
+clase_ph,focos_km2_anio,lluvia_seca_1991_2020,lluvia_anual_1991_2020,ph_medio,cos_medio_gkg,celdas
+extremadamente acido (<4.5),0.0,460.995,3075.695,4.4894,19.84,74
+muy fuertemente acido (4.5-5.0),0.0,415.0,2897.83,4.7526,17.1497,11489
+fuertemente acido (5.1-5.5),0.087,263.71,2674.37,5.1442,19.7473,22341
+moderadamente acido o mas (>5.5),0.0652,192.16,2472.75,5.5228,35.9595,9

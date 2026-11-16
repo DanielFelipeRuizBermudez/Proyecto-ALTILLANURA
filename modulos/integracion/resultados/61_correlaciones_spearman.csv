@@ -1,0 +1,11 @@
+variable_1,variable_2,spearman,n_celdas,n_efectivo,p_corregido,p_sin_corregir
+focos_km2_anio,lluvia_seca_1991_2020,-0.44489,33913,23.44691,0.03154,0.0
+focos_km2_anio,lluvia_anual_1991_2020,-0.33917,33913,25.29045,0.09506,0.0
+focos_km2_anio,ph_medio,0.6127,33913,27.8003,0.00056,0.0
+focos_km2_anio,cos_medio_gkg,0.27926,33913,57.12505,0.0352,0.0
+lluvia_seca_1991_2020,lluvia_anual_1991_2020,0.84662,33913,12.04737,0.0005,0.0
+lluvia_seca_1991_2020,ph_medio,-0.68415,33913,13.34854,0.00876,0.0
+lluvia_seca_1991_2020,cos_medio_gkg,-0.27363,33913,37.96301,0.09663,0.0
+lluvia_anual_1991_2020,ph_medio,-0.44659,33913,15.51332,0.08864,0.0
+lluvia_anual_1991_2020,cos_medio_gkg,-0.19146,33913,38.17535,0.24837,0.0
+ph_medio,cos_medio_gkg,0.48645,33913,37.19997,0.0022,0.0
