@@ -19,7 +19,7 @@ Este módulo usa el entorno y los datos del repositorio completo (ver el README 
 2. [23 · Tendencias del fuego](../../notebooks/20_fuego/23_fuego_tendencias.ipynb) compara composición, tasas de quema y tendencias.
 3. [50 · Panel de efectos fijos](../../notebooks/50_vinculos/50_panel_fuego_expansion.ipynb) compara dos escalas de cambio agropecuario en el panel y en la exploración regional.
 
-4. [53 · Predicción regional](../../notebooks/50_vinculos/53_prediccion_regional.ipynb) compara un ARIMA de referencia con modelos que incorporan lluvia y quema rezagadas. No se verificó la disponibilidad histórica de los insumos al momento del pronóstico; queda como observación al inicio del cuaderno.
+4. [53 · Predicción regional](../../notebooks/50_vinculos/53_prediccion_regional.ipynb) compara un pronóstico ingenuo y un ARIMA de referencia con modelos que incorporan lluvia y quema rezagadas, con MAE y MASE fuera de muestra. No se verificó la disponibilidad histórica de los insumos al momento del pronóstico; queda como observación al inicio del cuaderno.
 
 Los cuadernos 23, 50 y 52 guardan las salidas vigentes del panel en `datos/derivados/municipal/`, `resultados/tablas/municipal/` y `resultados/figuras/municipal/`. Las salidas del planteamiento anterior que estaban directamente en `resultados/tablas/` y `resultados/figuras/` se eliminaron.
 
