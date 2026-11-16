@@ -221,6 +221,11 @@ def construir_panel() -> pd.DataFrame:
     return panel
 
 
+def para_exportar(panel: pd.DataFrame) -> pd.DataFrame:
+    """Copia del panel con cod_mun como texto de 5 dígitos (DIVIPOLA), para guardarla en CSV."""
+    return panel.assign(cod_mun=panel["cod_mun"].map("{:05d}".format))
+
+
 def serie_regional(panel: pd.DataFrame) -> pd.DataFrame:
     """Agrega por año y recalcula las proporciones con denominadores regionales."""
 

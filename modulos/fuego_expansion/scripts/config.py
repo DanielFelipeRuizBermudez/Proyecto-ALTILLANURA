@@ -27,6 +27,8 @@ MUNICIPIOS = {
 }
 NOMBRE = {c: v[0] for c, v in MUNICIPIOS.items()}
 SLUG = {c: v[1] for c, v in MUNICIPIOS.items()}
+# nombre -> código DIVIPOLA como texto de 5 dígitos, para las tablas exportadas
+DIVIPOLA = {v[0]: f"{c:05d}" for c, v in MUNICIPIOS.items()}
 
 # Panel anual. La primera temporada seca completa en FIRMS es la de 2001
 # (diciembre de 2000 a marzo de 2001); MapBiomas cobertura llega hasta 2024.

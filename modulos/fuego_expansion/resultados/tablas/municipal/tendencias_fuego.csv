@@ -1,65 +1,65 @@
-﻿territorio,serie,tau,p,pendiente_sen_por_anio
-Altillanura,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.1775,0.2628,-94.3
-Cumaribo,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.1169,0.468,-16.0
-La Primavera,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.4113,0.0069,-35.2308
-Mapiripán,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",0.039,0.8236,4.7333
-Puerto Carreño,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.4286,0.0048,-16.25
-Puerto Gaitán,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.1255,0.4343,-18.0833
-Puerto López,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.2814,0.0708,-6.6
-Santa Rosalía,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.0216,0.9113,-1.4667
-Altillanura,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.3188,0.0298,-68.6667
-Cumaribo,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.1812,0.2269,-12.7056
-La Primavera,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.4058,0.005,-19.6809
-Mapiripán,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.2077,0.1569,-6.0598
-Puerto Carreño,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.4392,0.0027,-9.5147
-Puerto Gaitán,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.3116,0.0339,-18.1938
-Puerto López,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.413,0.0042,-4.9615
-Santa Rosalía,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.1087,0.4761,-1.3592
-Altillanura,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.2468,0.115,-56.0
-Cumaribo,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.1515,0.3418,-13.25
-La Primavera,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.3939,0.0099,-20.3333
-Mapiripán,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.1133,0.4628,-2.9474
-Puerto Carreño,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.4338,0.0048,-10.8
-Puerto Gaitán,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.2294,0.1439,-14.3889
-Puerto López,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.342,0.0266,-4.6667
-Santa Rosalía,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.039,0.8236,-1.1818
-Altillanura,Área quemada total (ha),0.0725,0.641,9203.5371
-Cumaribo,Área quemada total (ha),0.2319,0.1189,6394.6003
-La Primavera,Área quemada total (ha),0.0652,0.6765,1436.3633
-Mapiripán,Área quemada total (ha),-0.0507,0.7498,-527.8902
-Puerto Carreño,Área quemada total (ha),-0.2826,0.0555,-3430.7016
-Puerto Gaitán,Área quemada total (ha),0.0145,0.9413,433.6874
-Puerto López,Área quemada total (ha),0.0652,0.6765,223.5847
-Santa Rosalía,Área quemada total (ha),0.3623,0.0129,1546.4243
-Altillanura,Vegetación natural no forestal quemada (ha),0.0507,0.7498,6736.1912
-Cumaribo,Vegetación natural no forestal quemada (ha),0.2101,0.159,6151.8338
-La Primavera,Vegetación natural no forestal quemada (ha),0.058,0.7128,1176.8757
-Mapiripán,Vegetación natural no forestal quemada (ha),-0.1159,0.4461,-1101.2859
-Puerto Carreño,Vegetación natural no forestal quemada (ha),-0.2826,0.0555,-3919.1135
-Puerto Gaitán,Vegetación natural no forestal quemada (ha),-0.0217,0.9024,-503.708
-Puerto López,Vegetación natural no forestal quemada (ha),0.029,0.8637,96.5716
-Santa Rosalía,Vegetación natural no forestal quemada (ha),0.3696,0.0111,1273.4581
-Altillanura,Área agropecuaria quemada (ha),0.529,0.0002,2845.2904
-Cumaribo,Área agropecuaria quemada (ha),0.3986,0.0059,236.9378
-La Primavera,Área agropecuaria quemada (ha),0.4855,0.0006,271.8163
-Mapiripán,Área agropecuaria quemada (ha),0.3913,0.007,332.3164
-Puerto Carreño,Área agropecuaria quemada (ha),0.6014,0.0,592.7036
-Puerto Gaitán,Área agropecuaria quemada (ha),0.4058,0.005,989.2539
-Puerto López,Área agropecuaria quemada (ha),0.2246,0.1313,134.363
-Santa Rosalía,Área agropecuaria quemada (ha),0.5507,0.0001,302.3258
-Altillanura,Tasa de quema natural no forestal (%),0.1232,0.4172,0.2338
-Cumaribo,Tasa de quema natural no forestal (%),0.2609,0.0781,0.307
-La Primavera,Tasa de quema natural no forestal (%),0.1739,0.2466,0.1942
-Mapiripán,Tasa de quema natural no forestal (%),0.0145,0.9413,0.0105
-Puerto Carreño,Tasa de quema natural no forestal (%),-0.1739,0.2466,-0.2475
-Puerto Gaitán,Tasa de quema natural no forestal (%),0.0797,0.6062,0.2416
-Puerto López,Tasa de quema natural no forestal (%),0.2754,0.0623,0.2702
-Santa Rosalía,Tasa de quema natural no forestal (%),0.4348,0.0025,0.6649
-Altillanura,Tasa de quema agropecuaria (%),0.1812,0.2269,0.0668
-Cumaribo,Tasa de quema agropecuaria (%),0.1594,0.2896,0.0421
-La Primavera,Tasa de quema agropecuaria (%),-0.2464,0.0968,-0.1242
-Mapiripán,Tasa de quema agropecuaria (%),0.1087,0.4761,0.0491
-Puerto Carreño,Tasa de quema agropecuaria (%),-0.029,0.8637,-0.0398
-Puerto Gaitán,Tasa de quema agropecuaria (%),0.1594,0.2896,0.0938
-Puerto López,Tasa de quema agropecuaria (%),0.1159,0.4461,0.024
-Santa Rosalía,Tasa de quema agropecuaria (%),0.1812,0.2269,0.1819
+﻿territorio,mpio_cdpmp,serie,tau,p,pendiente_sen_por_anio
+Altillanura,,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.1775,0.2628,-94.3
+Cumaribo,99773,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.1169,0.468,-16.0
+La Primavera,99524,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.4113,0.0069,-35.2308
+Mapiripán,50325,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",0.039,0.8236,4.7333
+Puerto Carreño,99001,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.4286,0.0048,-16.25
+Puerto Gaitán,50568,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.1255,0.4343,-18.0833
+Puerto López,50573,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.2814,0.0708,-6.6
+Santa Rosalía,99624,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.0216,0.9113,-1.4667
+Altillanura,,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.3188,0.0298,-68.6667
+Cumaribo,99773,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.1812,0.2269,-12.7056
+La Primavera,99524,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.4058,0.005,-19.6809
+Mapiripán,50325,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.2077,0.1569,-6.0598
+Puerto Carreño,99001,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.4392,0.0027,-9.5147
+Puerto Gaitán,50568,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.3116,0.0339,-18.1938
+Puerto López,50573,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.413,0.0042,-4.9615
+Santa Rosalía,99624,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.1087,0.4761,-1.3592
+Altillanura,,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.2468,0.115,-56.0
+Cumaribo,99773,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.1515,0.3418,-13.25
+La Primavera,99524,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.3939,0.0099,-20.3333
+Mapiripán,50325,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.1133,0.4628,-2.9474
+Puerto Carreño,99001,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.4338,0.0048,-10.8
+Puerto Gaitán,50568,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.2294,0.1439,-14.3889
+Puerto López,50573,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.342,0.0266,-4.6667
+Santa Rosalía,99624,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.039,0.8236,-1.1818
+Altillanura,,Área quemada total (ha),0.0725,0.641,9203.5371
+Cumaribo,99773,Área quemada total (ha),0.2319,0.1189,6394.6003
+La Primavera,99524,Área quemada total (ha),0.0652,0.6765,1436.3633
+Mapiripán,50325,Área quemada total (ha),-0.0507,0.7498,-527.8902
+Puerto Carreño,99001,Área quemada total (ha),-0.2826,0.0555,-3430.7016
+Puerto Gaitán,50568,Área quemada total (ha),0.0145,0.9413,433.6874
+Puerto López,50573,Área quemada total (ha),0.0652,0.6765,223.5847
+Santa Rosalía,99624,Área quemada total (ha),0.3623,0.0129,1546.4243
+Altillanura,,Vegetación natural no forestal quemada (ha),0.0507,0.7498,6736.1912
+Cumaribo,99773,Vegetación natural no forestal quemada (ha),0.2101,0.159,6151.8338
+La Primavera,99524,Vegetación natural no forestal quemada (ha),0.058,0.7128,1176.8757
+Mapiripán,50325,Vegetación natural no forestal quemada (ha),-0.1159,0.4461,-1101.2859
+Puerto Carreño,99001,Vegetación natural no forestal quemada (ha),-0.2826,0.0555,-3919.1135
+Puerto Gaitán,50568,Vegetación natural no forestal quemada (ha),-0.0217,0.9024,-503.708
+Puerto López,50573,Vegetación natural no forestal quemada (ha),0.029,0.8637,96.5716
+Santa Rosalía,99624,Vegetación natural no forestal quemada (ha),0.3696,0.0111,1273.4581
+Altillanura,,Área agropecuaria quemada (ha),0.529,0.0002,2845.2904
+Cumaribo,99773,Área agropecuaria quemada (ha),0.3986,0.0059,236.9378
+La Primavera,99524,Área agropecuaria quemada (ha),0.4855,0.0006,271.8163
+Mapiripán,50325,Área agropecuaria quemada (ha),0.3913,0.007,332.3164
+Puerto Carreño,99001,Área agropecuaria quemada (ha),0.6014,0.0,592.7036
+Puerto Gaitán,50568,Área agropecuaria quemada (ha),0.4058,0.005,989.2539
+Puerto López,50573,Área agropecuaria quemada (ha),0.2246,0.1313,134.363
+Santa Rosalía,99624,Área agropecuaria quemada (ha),0.5507,0.0001,302.3258
+Altillanura,,Tasa de quema natural no forestal (%),0.1232,0.4172,0.2338
+Cumaribo,99773,Tasa de quema natural no forestal (%),0.2609,0.0781,0.307
+La Primavera,99524,Tasa de quema natural no forestal (%),0.1739,0.2466,0.1942
+Mapiripán,50325,Tasa de quema natural no forestal (%),0.0145,0.9413,0.0105
+Puerto Carreño,99001,Tasa de quema natural no forestal (%),-0.1739,0.2466,-0.2475
+Puerto Gaitán,50568,Tasa de quema natural no forestal (%),0.0797,0.6062,0.2416
+Puerto López,50573,Tasa de quema natural no forestal (%),0.2754,0.0623,0.2702
+Santa Rosalía,99624,Tasa de quema natural no forestal (%),0.4348,0.0025,0.6649
+Altillanura,,Tasa de quema agropecuaria (%),0.1812,0.2269,0.0668
+Cumaribo,99773,Tasa de quema agropecuaria (%),0.1594,0.2896,0.0421
+La Primavera,99524,Tasa de quema agropecuaria (%),-0.2464,0.0968,-0.1242
+Mapiripán,50325,Tasa de quema agropecuaria (%),0.1087,0.4761,0.0491
+Puerto Carreño,99001,Tasa de quema agropecuaria (%),-0.029,0.8637,-0.0398
+Puerto Gaitán,50568,Tasa de quema agropecuaria (%),0.1594,0.2896,0.0938
+Puerto López,50573,Tasa de quema agropecuaria (%),0.1159,0.4461,0.024
+Santa Rosalía,99624,Tasa de quema agropecuaria (%),0.1812,0.2269,0.1819

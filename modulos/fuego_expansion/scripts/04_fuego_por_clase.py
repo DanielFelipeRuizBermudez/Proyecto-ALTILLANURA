@@ -29,17 +29,19 @@ def composicion(p):
             "pct_agro": g["quem_agro_ha"].sum() / g["quem_total_ha"].sum() * 100,
             "pct_bosque": g["quem_bosque_ha"].sum() / g["quem_total_ha"].sum() * 100,
             "pct_sin_vegetacion": g["quem_sin_veg_ha"].sum() / g["quem_total_ha"].sum() * 100,
-            "tasa_quema_natural_media": g["tasa_quema_natural"].mean(),
-            "tasa_quema_agro_media": g["tasa_quema_agro"].mean(),
+            "tasa_quema_natural_media_pct": g["tasa_quema_natural"].mean(),
+            "tasa_quema_agro_media_pct": g["tasa_quema_agro"].mean(),
         }
     )
-    t["razon_tasa_agro_natural"] = t["tasa_quema_agro_media"] / t["tasa_quema_natural_media"]
+    t["razon_tasa_agro_natural"] = t["tasa_quema_agro_media_pct"] / t["tasa_quema_natural_media_pct"]
     # Comparación por pares dentro de cada año con ambas tasas disponibles.
     for m, d in p.groupby("municipio"):
         diferencias = (d["tasa_quema_agro"] - d["tasa_quema_natural"]).dropna()
         if not diferencias.empty:
             t.loc[m, "p_wilcoxon_agro_vs_natural"] = stats.wilcoxon(diferencias).pvalue
-    return t.round(3).sort_values("quemado_medio_ha", ascending=False)
+    t = t.round(3).sort_values("quemado_medio_ha", ascending=False)
+    t.insert(0, "mpio_cdpmp", t.index.map(cfg.DIVIPOLA))
+    return t
 
 
 def _con_terra_mismo_periodo(df):
@@ -59,4 +61,7 @@ def tendencias(p, reg):
         for m, d in p.groupby("municipio"):
             tau, pv, sen = mann_kendall(d[var].to_numpy(float), d["anio"].to_numpy())
             filas.append((m, etq, tau, pv, sen))
-    return pd.DataFrame(filas, columns=["territorio", "serie", "tau", "p", "pendiente_sen_por_anio"]).round(4)
+    t = pd.DataFrame(filas, columns=["territorio", "serie", "tau", "p", "pendiente_sen_por_anio"]).round(4)
+    # la fila regional (Altillanura) no tiene código de municipio
+    t.insert(1, "mpio_cdpmp", t["territorio"].map(cfg.DIVIPOLA))
+    return t
