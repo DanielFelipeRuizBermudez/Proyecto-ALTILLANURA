@@ -96,7 +96,7 @@ Una fila por municipio y año (7 × 24 = 168 filas, 2001-2024). Llave: `cod_mun`
 
 | Variable | Descripción | Unidad | Fuente |
 |---|---|---|---|
-| `cod_mun` | Código DIVIPOLA del municipio | texto, 5 dígitos | DANE |
+| `cod_mun` | Código DIVIPOLA del municipio; entero mientras se calcula y texto de 5 dígitos en el CSV | texto, 5 dígitos | DANE |
 | `municipio` | Nombre del municipio | texto | DANE |
 | `anio` | Año calendario; para focos y lluvia de temporada seca, año en que termina la temporada | año | — |
 | `area_total_ha` | Área del municipio en los mapas de cobertura | ha | MapBiomas cobertura |
@@ -125,5 +125,7 @@ Una fila por municipio y año (7 × 24 = 168 filas, 2001-2024). Llave: `cod_mun`
 | `lluvia_humeda_prev_mm` | Lluvia de abril a noviembre del año anterior | mm | CHIRPS |
 | `oni_nov_feb` | ONI medio de noviembre a febrero | °C | NOAA |
 | `eva_sembrada_ha` | Área sembrada total | ha | EVA (módulo de expansión) |
+
+Las tablas de resultados por municipio (`modulos/fuego_expansion/resultados/tablas/municipal/`: `descriptivo_por_municipio.csv`, `composicion_quema_por_municipio.csv` y `tendencias_fuego.csv`) llevan el nombre del municipio y su código en `mpio_cdpmp`, como texto de 5 dígitos.
 
 Terra + Aqua cuenta cerca del doble de detecciones que Terra sola, así que los coeficientes por foco de las dos series no se comparan en magnitud; solo se compara si el intervalo cruza cero.
