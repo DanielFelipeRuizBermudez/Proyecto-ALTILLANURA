@@ -10,8 +10,8 @@ Este módulo usa el entorno y los datos del repositorio completo (ver el README 
 
 1. Desde la raíz del repositorio, instala las dependencias con `pip install -r requirements.txt`.
 2. Baja los datos pesados con `dvc pull`. Este módulo lee de tres lugares:
-   - `modulos/fuego_expansion/datos/crudos/` (MapBiomas Fuego, pérdida de vegetación y TIFF de Cumaribo; puntero `datos/crudos.dvc`).
-   - `datos/comunes/` (FIRMS, CHIRPS y ONI mensuales por municipio).
+   - `modulos/fuego_expansion/datos/crudos/` (estadísticas de MapBiomas Fuego, pérdida de vegetación, TIFF de cobertura de Cumaribo y TIFF de fuego de los siete municipios; puntero `datos/crudos.dvc`).
+   - `datos/comunes/` (FIRMS, CHIRPS y ONI mensuales por municipio, límites municipales y grilla común de 2 km).
    - `modulos/expansion/datos/procesados/` (coberturas MapBiomas y EVA, del módulo de expansión).
 3. Abre los cuadernos desde su carpeta (`notebooks/20_fuego/` y `notebooks/50_vinculos/`). Cada uno construye lo que necesita y no depende de que otro se haya ejecutado antes. Los datos derivados se escriben en `datos/derivados/`, que Git ignora y se regenera al ejecutar.
 
@@ -36,8 +36,8 @@ El [cuaderno 24](../../notebooks/20_fuego/24_fuego_quema_celda.ipynb) lleva los 
 ## Datos y especificación
 
 - **Resultados.** El cambio neto anual en hectáreas se divide por el área total del territorio en el año anterior para el indicador principal y por el área agropecuaria del año anterior para el crecimiento relativo. Los resultados se expresan en puntos porcentuales del territorio y en porcentaje de la base agropecuaria, respectivamente. MapBiomas incluye mosaico de agricultura y pastos, palma aceitera y plantación forestal. Una sensibilidad del resultado principal excluye plantaciones forestales.
-- **Exposición principal.** Área quemada de formación natural no forestal según MapBiomas Fuego, dividida por el área de esa cobertura en el mismo año calendario. La clase incluye praderas y otras coberturas, como humedales. Los CSV adjuntos carecen de metadatos de unidad y el cálculo usa hectáreas como supuesto de trabajo. Se usa el área quemada de 2000 para calcular el primer rezago.
-- **Lluvia y contraste.** CHIRPS aporta lluvia de diciembre del año anterior a marzo del año analizado. FIRMS Terra aporta detecciones de la misma temporada, expresadas por 100 km². Las comparaciones de regresión entre fuentes usan una muestra común y sus coeficientes conservan unidades distintas. ONI, EVA y pérdida de vegetación se conservan como contexto en el panel.
+- **Exposición principal.** Área quemada de formación natural no forestal según MapBiomas Fuego, dividida por el área de esa cobertura en el mismo año calendario. La clase incluye praderas y otras coberturas, como humedales. Los CSV no traen metadatos de unidad; se leen en hectáreas, y el cuaderno 24 comprueba que coinciden con el área quemada de los mapas de 30 m. Se usa el área quemada de 2000 para calcular el primer rezago.
+- **Lluvia y contraste.** CHIRPS aporta lluvia de diciembre del año anterior a marzo del año analizado. FIRMS aporta detecciones de la misma temporada, expresadas por 100 km²: Terra + Aqua desde 2003 como serie principal y Terra sola desde 2001 como sensibilidad. Las comparaciones de regresión entre fuentes usan una muestra común y sus coeficientes conservan unidades distintas. ONI, EVA y pérdida de vegetación se conservan como contexto en el panel.
 - **Calidad del fuego.** MapBiomas Fuego Colección 1 Beta complementó Landsat con MODIS MCD64A1 en 2002, 2005 y 2007. Se conservan esos años en el modelo principal. Una sensibilidad excluye las filas que usan uno de ellos en el predictor contemporáneo o rezagado. [Nota de calidad de MapBiomas Fuego](https://colombia.mapbiomas.org/iniciativas-y-productos/fuego/calidad-mosaico/)
 - **Modelo.** Efectos fijos de municipio, tasa de quema del año y del anterior, y lluvia seca del año. Los intervalos aproximados del 95 % se obtienen con 2.000 réplicas de bloques móviles de tres años calendario. Se comprueba la sensibilidad a efectos fijos de año, al salto de Puerto Carreño de 2014, a la definición de área agropecuaria y a los años de fuego con calidad limitada.
 
