@@ -1,0 +1,99 @@
+y,x,municipio,rho,p,n
+d_agro_pct,focos_seca_dens,Cumaribo,0.06,0.7806,24
+d_agro_pct,focos_seca_dens,La Primavera,-0.4435,0.03,24
+d_agro_pct,focos_seca_dens,Mapiripán,-0.2191,0.3036,24
+d_agro_pct,focos_seca_dens,Puerto Carreño,-0.3,0.1544,24
+d_agro_pct,focos_seca_dens,Puerto Gaitán,-0.5365,0.0069,24
+d_agro_pct,focos_seca_dens,Puerto López,-0.12,0.5765,24
+d_agro_pct,focos_seca_dens,Santa Rosalía,-0.5748,0.0033,24
+d_agro_pct,quem_total_pct,Cumaribo,0.0965,0.6537,24
+d_agro_pct,quem_total_pct,La Primavera,0.1348,0.5301,24
+d_agro_pct,quem_total_pct,Mapiripán,-0.1496,0.4855,24
+d_agro_pct,quem_total_pct,Puerto Carreño,-0.233,0.2731,24
+d_agro_pct,quem_total_pct,Puerto Gaitán,-0.2774,0.1894,24
+d_agro_pct,quem_total_pct,Puerto López,0.0548,0.7993,24
+d_agro_pct,quem_total_pct,Santa Rosalía,-0.3922,0.058,24
+d_agro_pct,quem_agro_pct,Cumaribo,0.0826,0.7012,24
+d_agro_pct,quem_agro_pct,La Primavera,0.5548,0.0049,24
+d_agro_pct,quem_agro_pct,Mapiripán,0.0609,0.7775,24
+d_agro_pct,quem_agro_pct,Puerto Carreño,0.0904,0.6743,24
+d_agro_pct,quem_agro_pct,Puerto Gaitán,0.2313,0.2768,24
+d_agro_pct,quem_agro_pct,Puerto López,0.1496,0.4855,24
+d_agro_pct,quem_agro_pct,Santa Rosalía,-0.2061,0.334,24
+d_agro_pct,quem_sabana_pct,Cumaribo,0.1209,0.5737,24
+d_agro_pct,quem_sabana_pct,La Primavera,0.1043,0.6275,24
+d_agro_pct,quem_sabana_pct,Mapiripán,-0.1974,0.3552,24
+d_agro_pct,quem_sabana_pct,Puerto Carreño,-0.2443,0.2499,24
+d_agro_pct,quem_sabana_pct,Puerto Gaitán,-0.3026,0.1506,24
+d_agro_pct,quem_sabana_pct,Puerto López,0.0417,0.8465,24
+d_agro_pct,quem_sabana_pct,Santa Rosalía,-0.3904,0.0593,24
+d_agro_pct,lluvia_seca_mm,Cumaribo,0.1609,0.4527,24
+d_agro_pct,lluvia_seca_mm,La Primavera,-0.1765,0.4093,24
+d_agro_pct,lluvia_seca_mm,Mapiripán,-0.2574,0.2247,24
+d_agro_pct,lluvia_seca_mm,Puerto Carreño,0.0687,0.7498,24
+d_agro_pct,lluvia_seca_mm,Puerto Gaitán,0.1391,0.5167,24
+d_agro_pct,lluvia_seca_mm,Puerto López,-0.087,0.6862,24
+d_agro_pct,lluvia_seca_mm,Santa Rosalía,0.2374,0.264,24
+d_agro_pct,oni_nov_feb,Cumaribo,-0.1339,0.5327,24
+d_agro_pct,oni_nov_feb,La Primavera,0.0478,0.8244,24
+d_agro_pct,oni_nov_feb,Mapiripán,-0.3565,0.0873,24
+d_agro_pct,oni_nov_feb,Puerto Carreño,-0.1504,0.4829,24
+d_agro_pct,oni_nov_feb,Puerto Gaitán,0.0887,0.6802,24
+d_agro_pct,oni_nov_feb,Puerto López,0.0261,0.9037,24
+d_agro_pct,oni_nov_feb,Santa Rosalía,-0.3096,0.141,24
+d_agro_pct,perdida_veg_pct,Cumaribo,0.5661,0.0039,24
+d_agro_pct,perdida_veg_pct,La Primavera,0.8426,0.0,24
+d_agro_pct,perdida_veg_pct,Mapiripán,0.7913,0.0,24
+d_agro_pct,perdida_veg_pct,Puerto Carreño,0.6513,0.0006,24
+d_agro_pct,perdida_veg_pct,Puerto Gaitán,0.9513,0.0,24
+d_agro_pct,perdida_veg_pct,Puerto López,0.9043,0.0,24
+d_agro_pct,perdida_veg_pct,Santa Rosalía,0.7661,0.0,24
+d_sabana_pct,focos_seca_dens,Cumaribo,0.1139,0.5961,24
+d_sabana_pct,focos_seca_dens,La Primavera,0.4296,0.0362,24
+d_sabana_pct,focos_seca_dens,Mapiripán,0.5191,0.0093,24
+d_sabana_pct,focos_seca_dens,Puerto Carreño,0.26,0.2198,24
+d_sabana_pct,focos_seca_dens,Puerto Gaitán,0.5974,0.0021,24
+d_sabana_pct,focos_seca_dens,Puerto López,0.2887,0.1713,24
+d_sabana_pct,focos_seca_dens,Santa Rosalía,0.5452,0.0059,24
+d_sabana_pct,quem_total_pct,Cumaribo,0.0287,0.8941,24
+d_sabana_pct,quem_total_pct,La Primavera,-0.1661,0.438,24
+d_sabana_pct,quem_total_pct,Mapiripán,0.4209,0.0406,24
+d_sabana_pct,quem_total_pct,Puerto Carreño,0.2148,0.3135,24
+d_sabana_pct,quem_total_pct,Puerto Gaitán,0.3191,0.1285,24
+d_sabana_pct,quem_total_pct,Puerto López,0.2339,0.2713,24
+d_sabana_pct,quem_total_pct,Santa Rosalía,0.3826,0.065,24
+d_sabana_pct,quem_agro_pct,Cumaribo,0.167,0.4355,24
+d_sabana_pct,quem_agro_pct,La Primavera,-0.5104,0.0108,24
+d_sabana_pct,quem_agro_pct,Mapiripán,0.167,0.4355,24
+d_sabana_pct,quem_agro_pct,Puerto Carreño,-0.0513,0.8118,24
+d_sabana_pct,quem_agro_pct,Puerto Gaitán,-0.2209,0.2997,24
+d_sabana_pct,quem_agro_pct,Puerto López,0.0461,0.8307,24
+d_sabana_pct,quem_agro_pct,Santa Rosalía,0.1661,0.438,24
+d_sabana_pct,quem_sabana_pct,Cumaribo,-0.0104,0.9614,24
+d_sabana_pct,quem_sabana_pct,La Primavera,-0.1383,0.5194,24
+d_sabana_pct,quem_sabana_pct,Mapiripán,0.4791,0.0178,24
+d_sabana_pct,quem_sabana_pct,Puerto Carreño,0.233,0.2731,24
+d_sabana_pct,quem_sabana_pct,Puerto Gaitán,0.3348,0.1098,24
+d_sabana_pct,quem_sabana_pct,Puerto López,0.2478,0.243,24
+d_sabana_pct,quem_sabana_pct,Santa Rosalía,0.3809,0.0663,24
+d_sabana_pct,lluvia_seca_mm,Cumaribo,-0.1817,0.3954,24
+d_sabana_pct,lluvia_seca_mm,La Primavera,0.1052,0.6246,24
+d_sabana_pct,lluvia_seca_mm,Mapiripán,-0.033,0.8782,24
+d_sabana_pct,lluvia_seca_mm,Puerto Carreño,-0.0652,0.7621,24
+d_sabana_pct,lluvia_seca_mm,Puerto Gaitán,-0.1774,0.407,24
+d_sabana_pct,lluvia_seca_mm,Puerto López,-0.0148,0.9453,24
+d_sabana_pct,lluvia_seca_mm,Santa Rosalía,-0.2183,0.3056,24
+d_sabana_pct,oni_nov_feb,Cumaribo,0.1374,0.522,24
+d_sabana_pct,oni_nov_feb,La Primavera,-0.1104,0.6075,24
+d_sabana_pct,oni_nov_feb,Mapiripán,0.2643,0.2119,24
+d_sabana_pct,oni_nov_feb,Puerto Carreño,0.2704,0.2012,24
+d_sabana_pct,oni_nov_feb,Puerto Gaitán,-0.0687,0.7498,24
+d_sabana_pct,oni_nov_feb,Puerto López,0.1217,0.5709,24
+d_sabana_pct,oni_nov_feb,Santa Rosalía,0.2635,0.2135,24
+d_sabana_pct,perdida_veg_pct,Cumaribo,-0.4965,0.0136,24
+d_sabana_pct,perdida_veg_pct,La Primavera,-0.8235,0.0,24
+d_sabana_pct,perdida_veg_pct,Mapiripán,-0.7278,0.0001,24
+d_sabana_pct,perdida_veg_pct,Puerto Carreño,-0.553,0.0051,24
+d_sabana_pct,perdida_veg_pct,Puerto Gaitán,-0.96,0.0,24
+d_sabana_pct,perdida_veg_pct,Puerto López,-0.7887,0.0,24
+d_sabana_pct,perdida_veg_pct,Santa Rosalía,-0.7096,0.0001,24

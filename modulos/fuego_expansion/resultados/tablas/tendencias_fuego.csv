@@ -1,0 +1,49 @@
+﻿territorio,serie,tau,p,pendiente_sen_por_anio
+Altillanura,Focos MODIS dic-mar (Terra),-0.3188,0.0298,-68.6667
+Cumaribo,Focos MODIS dic-mar (Terra),-0.1812,0.2269,-12.7056
+La Primavera,Focos MODIS dic-mar (Terra),-0.4058,0.005,-19.6809
+Mapiripán,Focos MODIS dic-mar (Terra),-0.2077,0.1569,-6.0598
+Puerto Carreño,Focos MODIS dic-mar (Terra),-0.4392,0.0027,-9.5147
+Puerto Gaitán,Focos MODIS dic-mar (Terra),-0.3116,0.0339,-18.1938
+Puerto López,Focos MODIS dic-mar (Terra),-0.413,0.0042,-4.9615
+Santa Rosalía,Focos MODIS dic-mar (Terra),-0.1087,0.4761,-1.3592
+Altillanura,Área quemada total (ha),0.0725,0.641,9203.5371
+Cumaribo,Área quemada total (ha),0.2319,0.1189,6394.6003
+La Primavera,Área quemada total (ha),0.0652,0.6765,1436.3633
+Mapiripán,Área quemada total (ha),-0.0507,0.7498,-527.8902
+Puerto Carreño,Área quemada total (ha),-0.2826,0.0555,-3430.7016
+Puerto Gaitán,Área quemada total (ha),0.0145,0.9413,433.6874
+Puerto López,Área quemada total (ha),0.0652,0.6765,223.5847
+Santa Rosalía,Área quemada total (ha),0.3623,0.0129,1546.4243
+Altillanura,Sabana quemada (ha),0.0507,0.7498,6736.1912
+Cumaribo,Sabana quemada (ha),0.2101,0.159,6151.8338
+La Primavera,Sabana quemada (ha),0.058,0.7128,1176.8757
+Mapiripán,Sabana quemada (ha),-0.1159,0.4461,-1101.2859
+Puerto Carreño,Sabana quemada (ha),-0.2826,0.0555,-3919.1135
+Puerto Gaitán,Sabana quemada (ha),-0.0217,0.9024,-503.708
+Puerto López,Sabana quemada (ha),0.029,0.8637,96.5716
+Santa Rosalía,Sabana quemada (ha),0.3696,0.0111,1273.4581
+Altillanura,Área agropecuaria quemada (ha),0.529,0.0002,2845.2904
+Cumaribo,Área agropecuaria quemada (ha),0.3986,0.0059,236.9378
+La Primavera,Área agropecuaria quemada (ha),0.4855,0.0006,271.8163
+Mapiripán,Área agropecuaria quemada (ha),0.3913,0.007,332.3164
+Puerto Carreño,Área agropecuaria quemada (ha),0.6014,0.0,592.7036
+Puerto Gaitán,Área agropecuaria quemada (ha),0.4058,0.005,989.2539
+Puerto López,Área agropecuaria quemada (ha),0.2246,0.1313,134.363
+Santa Rosalía,Área agropecuaria quemada (ha),0.5507,0.0001,302.3258
+Altillanura,Tasa de quema de la sabana (%),0.1232,0.4172,0.2338
+Cumaribo,Tasa de quema de la sabana (%),0.2609,0.0781,0.307
+La Primavera,Tasa de quema de la sabana (%),0.1739,0.2466,0.1942
+Mapiripán,Tasa de quema de la sabana (%),0.0145,0.9413,0.0105
+Puerto Carreño,Tasa de quema de la sabana (%),-0.1739,0.2466,-0.2475
+Puerto Gaitán,Tasa de quema de la sabana (%),0.0797,0.6062,0.2416
+Puerto López,Tasa de quema de la sabana (%),0.2754,0.0623,0.2702
+Santa Rosalía,Tasa de quema de la sabana (%),0.4348,0.0025,0.6649
+Altillanura,Tasa de quema agropecuaria (%),0.1812,0.2269,0.0668
+Cumaribo,Tasa de quema agropecuaria (%),0.1594,0.2896,0.0421
+La Primavera,Tasa de quema agropecuaria (%),-0.2464,0.0968,-0.1242
+Mapiripán,Tasa de quema agropecuaria (%),0.1087,0.4761,0.0491
+Puerto Carreño,Tasa de quema agropecuaria (%),-0.029,0.8637,-0.0398
+Puerto Gaitán,Tasa de quema agropecuaria (%),0.1594,0.2896,0.0938
+Puerto López,Tasa de quema agropecuaria (%),0.1159,0.4461,0.024
+Santa Rosalía,Tasa de quema agropecuaria (%),0.1812,0.2269,0.1819

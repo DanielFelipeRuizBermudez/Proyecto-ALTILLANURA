@@ -1,0 +1,15 @@
+y,x,rho,p,n
+d_agro_pct,focos_seca_dens,-0.3253,0.0,168
+d_agro_pct,quem_total_pct,-0.1349,0.0813,168
+d_agro_pct,quem_agro_pct,0.1188,0.125,168
+d_agro_pct,quem_sabana_pct,-0.1517,0.0496,168
+d_agro_pct,lluvia_seca_mm,0.0593,0.4451,168
+d_agro_pct,oni_nov_feb,-0.1305,0.0918,168
+d_agro_pct,perdida_veg_pct,0.789,0.0,168
+d_sabana_pct,focos_seca_dens,0.3846,0.0,168
+d_sabana_pct,quem_total_pct,0.1912,0.013,168
+d_sabana_pct,quem_agro_pct,-0.0505,0.5161,168
+d_sabana_pct,quem_sabana_pct,0.2042,0.0079,168
+d_sabana_pct,lluvia_seca_mm,-0.0975,0.2087,168
+d_sabana_pct,oni_nov_feb,0.1024,0.1866,168
+d_sabana_pct,perdida_veg_pct,-0.7203,0.0,168
