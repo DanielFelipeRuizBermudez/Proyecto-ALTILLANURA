@@ -1,6 +1,6 @@
 outs:
-- md5: 7b46c3bbb5599364af59ad4cb2d55fb4.dir
-  size: 45280646
-  nfiles: 17
+- md5: ce2962729bdb3636fb881444f07ce545.dir
+  size: 48376060
+  nfiles: 18
   hash: md5
   path: soilgrids

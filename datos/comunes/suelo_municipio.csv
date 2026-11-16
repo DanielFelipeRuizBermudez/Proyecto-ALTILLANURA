@@ -1,0 +1,8 @@
+mpio_cdpmp,mpio_cnmbr,area_km2,n_pixeles,ph_medio,cos_medio_gkg,pct_area_ph_menor_5,pct_ph_menor_4_5,pct_ph_4_5_a_5_0,pct_ph_5_1_a_5_5,pct_ph_mayor_5_5,clase_ph
+50325,MAPIRIPÁN,11917.4788,154312,4.9409,19.2702,50.5502,0.0,62.8992,37.1008,0.0,muy fuertemente acido (4.5-5.0)
+50568,PUERTO GAITÁN,17200.784,223413,5.1055,20.3881,7.6755,0.0,13.7687,86.2304,0.0009,fuertemente acido (5.1-5.5)
+50573,PUERTO LÓPEZ,6898.2361,89026,5.0736,21.257,10.2307,0.0,22.8394,77.1606,0.0,fuertemente acido (5.1-5.5)
+99001,PUERTO CARREÑO,12142.3234,153662,5.2191,22.2623,1.7857,0.0,3.6281,96.0752,0.2968,fuertemente acido (5.1-5.5)
+99524,LA PRIMAVERA,18492.1072,238268,5.1598,18.9345,1.5881,0.0,5.642,94.358,0.0,fuertemente acido (5.1-5.5)
+99624,SANTA ROSALÍA,3679.005,47440,5.1244,21.1302,3.5223,0.0,9.0325,90.9675,0.0,fuertemente acido (5.1-5.5)
+99773,CUMARIBO,65319.2852,838092,4.9145,18.8659,56.3157,0.4758,57.9887,39.6196,0.0824,muy fuertemente acido (4.5-5.0)
