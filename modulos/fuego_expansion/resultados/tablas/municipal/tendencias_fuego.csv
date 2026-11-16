@@ -1,12 +1,28 @@
 ﻿territorio,serie,tau,p,pendiente_sen_por_anio
-Altillanura,Focos MODIS dic-mar (Terra),-0.3188,0.0298,-68.6667
-Cumaribo,Focos MODIS dic-mar (Terra),-0.1812,0.2269,-12.7056
-La Primavera,Focos MODIS dic-mar (Terra),-0.4058,0.005,-19.6809
-Mapiripán,Focos MODIS dic-mar (Terra),-0.2077,0.1569,-6.0598
-Puerto Carreño,Focos MODIS dic-mar (Terra),-0.4392,0.0027,-9.5147
-Puerto Gaitán,Focos MODIS dic-mar (Terra),-0.3116,0.0339,-18.1938
-Puerto López,Focos MODIS dic-mar (Terra),-0.413,0.0042,-4.9615
-Santa Rosalía,Focos MODIS dic-mar (Terra),-0.1087,0.4761,-1.3592
+Altillanura,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.1775,0.2628,-94.3
+Cumaribo,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.1169,0.468,-16.0
+La Primavera,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.4113,0.0069,-35.2308
+Mapiripán,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",0.039,0.8236,4.7333
+Puerto Carreño,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.4286,0.0048,-16.25
+Puerto Gaitán,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.1255,0.4343,-18.0833
+Puerto López,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.2814,0.0708,-6.6
+Santa Rosalía,"Focos FIRMS dic-mar (Terra + Aqua, desde 2003)",-0.0216,0.9113,-1.4667
+Altillanura,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.3188,0.0298,-68.6667
+Cumaribo,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.1812,0.2269,-12.7056
+La Primavera,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.4058,0.005,-19.6809
+Mapiripán,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.2077,0.1569,-6.0598
+Puerto Carreño,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.4392,0.0027,-9.5147
+Puerto Gaitán,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.3116,0.0339,-18.1938
+Puerto López,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.413,0.0042,-4.9615
+Santa Rosalía,"Focos FIRMS dic-mar (solo Terra, desde 2001)",-0.1087,0.4761,-1.3592
+Altillanura,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.2468,0.115,-56.0
+Cumaribo,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.1515,0.3418,-13.25
+La Primavera,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.3939,0.0099,-20.3333
+Mapiripán,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.1133,0.4628,-2.9474
+Puerto Carreño,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.4338,0.0048,-10.8
+Puerto Gaitán,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.2294,0.1439,-14.3889
+Puerto López,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.342,0.0266,-4.6667
+Santa Rosalía,"Focos FIRMS dic-mar (solo Terra, desde 2003)",-0.039,0.8236,-1.1818
 Altillanura,Área quemada total (ha),0.0725,0.641,9203.5371
 Cumaribo,Área quemada total (ha),0.2319,0.1189,6394.6003
 La Primavera,Área quemada total (ha),0.0652,0.6765,1436.3633

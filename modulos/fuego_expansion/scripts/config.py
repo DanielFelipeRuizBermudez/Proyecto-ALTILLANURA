@@ -36,6 +36,11 @@ ANIO_FIN = 2024
 # MapBiomas Fuego Colección 1 Beta: limitaciones Landsat y apoyo MODIS MCD64A1.
 ANIOS_FUEGO_LIMITADOS = (2002, 2005, 2007)
 
+# FIRMS: Aqua opera desde julio de 2002, así que Terra + Aqua es comparable desde la
+# temporada seca de 2003 (diciembre de 2002 a marzo de 2003) y el año calendario 2003.
+# Antes solo hay Terra, que además pierde detecciones en 2024-2025 por la deriva de su órbita.
+ANIO_INI_TOTAL = 2003
+
 # Temporada seca del año y: diciembre de y-1 a marzo de y.
 MESES_SECA = (12, 1, 2, 3)
 
