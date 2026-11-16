@@ -8,7 +8,6 @@ pyproj>=3.4
 geopandas>=0.14
 pytest>=8.0
 dvc[gs]>=3.0
-geopandas>=0.14
 pykrige>=1.7
 gstools>=1.5
 shapely>=2.0
