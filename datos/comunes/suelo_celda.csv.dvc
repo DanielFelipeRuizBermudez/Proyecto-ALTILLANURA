@@ -1,0 +1,5 @@
+outs:
+- md5: ea9608a2308f9cbad84f5472ef111ac1
+  size: 4294147
+  hash: md5
+  path: suelo_celda.csv
