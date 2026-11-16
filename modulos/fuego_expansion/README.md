@@ -27,7 +27,11 @@ Los cuadernos 23, 50 y 52 guardan las salidas vigentes del panel en `datos/deriv
 
 El [cuaderno 51](../../notebooks/50_vinculos/51_cumaribo.ipynb) necesita `rasterio`, que ya está en el `requirements.txt` de la raíz. Puede ejecutarse por separado. Lee los TIFF en `datos/crudos/mapbiomas_coverage_cumaribo_tiff/` y `datos/crudos/mapbiomas_fire_cumaribo_tiff/`. El nombre de cada archivo empieza por el año.
 
-El notebook genera un mapa de primera conversión de praderas, tasas según quema previa y Moran local de tasas de conversión en celdas de 2 km. Sus salidas se guardan en las subcarpetas `cumaribo/` de datos derivados, tablas y figuras.
+El notebook genera un mapa de primera conversión de praderas, tasas según quema previa y Moran local de tasas de conversión en las celdas de 2 km de la grilla común (`id_celda`, EPSG:9377). Sus salidas se guardan en las subcarpetas `cumaribo/` de datos derivados, tablas y figuras.
+
+### Fracción quemada por celda
+
+El [cuaderno 24](../../notebooks/20_fuego/24_fuego_quema_celda.ipynb) lleva los mapas anuales de MapBiomas Fuego de los siete municipios (2015–2025) a la grilla común de 2 km. Lee los TIFF en `datos/crudos/mapbiomas_fire_<municipio>_tiff/` y escribe `quema_celda.csv` y `quema_celda_anual.csv` en `datos/comunes/` (DVC). Compara además el área quemada de los mapas con las estadísticas municipales de la plataforma.
 
 ## Datos y especificación
 
@@ -44,5 +48,6 @@ El notebook genera un mapa de primera conversión de praderas, tasas según quem
 - `scripts/03_panel_efectos_fijos.py` ajusta el panel y calcula los intervalos.
 - `scripts/04_fuego_por_clase.py` calcula composición, tasas comparadas y tendencias.
 - `scripts/05_correlacion_regional.py` calcula la correlación cruzada preblanqueada.
-- `scripts/06_conversion_cumaribo.py` cruza los GeoTIFF, calcula superficies y estima Moran local.
+- `scripts/06_conversion_cumaribo.py` cruza los GeoTIFF, calcula superficies por celda de la grilla común y estima Moran local.
+- `scripts/07_quema_celda.py` calcula la fracción quemada por celda de la grilla común en los siete municipios.
 - `scripts/config.py` y `scripts/utils.py` reúnen parámetros y funciones comunes.

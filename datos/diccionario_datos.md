@@ -38,7 +38,7 @@ Módulo `modulos/fuego_expansion/`. Los municipios son los siete de la Altillanu
 | Mapas anuales de área quemada, los otros seis municipios | MapBiomas Fuego Colombia, Colección 1 Beta | 2015-2025 | Píxel de 0,00027° (≈ 30 m), EPSG:4326 | valor > 0 = quemado ese año; 0 = sin quema o sin dato | `mapbiomas_fire_<municipio>_tiff/<año>_fuego_<municipio>.tif` |
 | Mapas anuales de cobertura, Cumaribo | MapBiomas Colombia, cobertura y uso | 2000-2024 | Píxel de 0,00027° (≈ 30 m), EPSG:4326 | código de clase (12 = pradera; 9, 21 y 35 = agropecuario); 0 = sin dato | `mapbiomas_coverage_cumaribo_tiff/<año>_*.tif` |
 
-Los CSV de MapBiomas Fuego no traen metadato de unidad. Se leen en hectáreas, que es la unidad de las estadísticas de la plataforma MapBiomas; con esa lectura Cumaribo quema en promedio el 7,4 % de su área al año. MapBiomas Fuego complementó Landsat con MODIS MCD64A1 en 2002, 2005 y 2007; esos años se marcan con `fuego_calidad_limitada`.
+Los CSV de MapBiomas Fuego no traen metadato de unidad. Se leen en hectáreas. El cuaderno 24 lo comprueba: el área quemada que suman los mapas de 30 m coincide con la de los CSV en cada municipio y año de 2015-2025 (diferencia máxima del total por municipio: 0,03 %). MapBiomas Fuego complementó Landsat con MODIS MCD64A1 en 2002, 2005 y 2007; esos años se marcan con `fuego_calidad_limitada`.
 
 De otras partes del proyecto se leen `datos/comunes/firms_mensual_municipio.csv`, `chirps_mensual_municipio.csv` y `oni_mensual.csv` (Michelle) y `modulos/expansion/datos/procesados/` (coberturas MapBiomas y EVA, Daniel).
 
