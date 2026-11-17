@@ -1,3 +1,3 @@
-zona,focos_km2_anio,lluvia_seca_1991_2020,lluvia_anual_1991_2020,ph_medio,cos_medio_gkg,celdas
-Cumaribo,0.0109,379.31,2892.4,4.8704,18.2628,16295
-Resto de la Altillanura,0.0761,250.74,2623.67,5.1259,19.5241,17618
+zona,focos_km2_anio,lluvia_seca_1991_2020,lluvia_anual_1991_2020,ph_medio,cos_medio_gkg,quema_media_anual_pct,agro_pct_2024,cambio_agro_pp,celdas
+Cumaribo,0.0109,379.31,2892.4,4.8702,18.2592,0.1033,0.0891,0.0,16273
+Resto de la Altillanura,0.0761,251.325,2624.505,5.1256,19.5095,13.7648,9.814,4.1657,17526

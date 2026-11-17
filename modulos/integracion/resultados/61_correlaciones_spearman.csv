@@ -1,11 +1,29 @@
-variable_1,variable_2,spearman,n_celdas,n_efectivo,p_corregido,p_sin_corregir
-focos_km2_anio,lluvia_seca_1991_2020,-0.44489,33913,23.44691,0.03154,0.0
-focos_km2_anio,lluvia_anual_1991_2020,-0.33917,33913,25.29045,0.09506,0.0
-focos_km2_anio,ph_medio,0.6127,33913,27.8003,0.00056,0.0
-focos_km2_anio,cos_medio_gkg,0.27926,33913,57.12505,0.0352,0.0
-lluvia_seca_1991_2020,lluvia_anual_1991_2020,0.84662,33913,12.04737,0.0005,0.0
-lluvia_seca_1991_2020,ph_medio,-0.68415,33913,13.34854,0.00876,0.0
-lluvia_seca_1991_2020,cos_medio_gkg,-0.27363,33913,37.96301,0.09663,0.0
-lluvia_anual_1991_2020,ph_medio,-0.44659,33913,15.51332,0.08864,0.0
-lluvia_anual_1991_2020,cos_medio_gkg,-0.19146,33913,38.17535,0.24837,0.0
-ph_medio,cos_medio_gkg,0.48645,33913,37.19997,0.0022,0.0
+variable_1,variable_2,spearman,n_celdas,n_efectivo,n_efectivo_min,n_efectivo_max,p_corregido,p_sin_corregir,p_holm,resultado
+focos_km2_anio,quema_media_anual_pct,0.81817,33799,38.49315,34.37756,42.61421,0.0,0.0,0.0,significativa
+agro_pct_2024,cambio_agro_pp,0.70597,33799,51.9231,44.09376,60.78473,0.0,0.0,0.0,significativa
+ph_medio,quema_media_anual_pct,0.73675,33799,24.04122,22.13263,27.17487,4e-05,0.0,0.00103,significativa
+focos_km2_anio,ph_medio,0.61529,33799,29.2117,26.67905,32.74316,0.00036,0.0,0.00904,significativa
+focos_km2_anio,cambio_agro_pp,0.40351,33799,69.80466,59.96225,79.33145,0.00054,0.0,0.01302,significativa
+lluvia_seca_1991_2020,lluvia_anual_1991_2020,0.84548,33799,11.84221,10.58973,13.3969,0.00059,0.0,0.01361,significativa
+ph_medio,cos_medio_gkg,0.48726,33799,38.61022,33.69312,46.669,0.00175,0.0,0.03857,significativa
+focos_km2_anio,agro_pct_2024,0.41038,33799,42.45236,37.89059,46.60647,0.00663,0.0,0.13928,indicativa
+lluvia_seca_1991_2020,ph_medio,-0.68518,33799,14.07001,12.53673,15.75481,0.00668,0.0,0.13928,indicativa
+lluvia_seca_1991_2020,quema_media_anual_pct,-0.58263,33799,20.20439,18.97447,22.5355,0.0067,0.0,0.13928,indicativa
+quema_media_anual_pct,cambio_agro_pp,0.32196,33799,58.51735,50.63888,64.92416,0.01328,0.0,0.23909,indicativa
+cos_medio_gkg,quema_media_anual_pct,0.33865,33799,49.93744,42.94316,56.93083,0.01622,0.0,0.27566,indicativa
+focos_km2_anio,lluvia_seca_1991_2020,-0.45107,33799,24.72204,22.9706,27.15774,0.0245,0.0,0.39208,indicativa
+focos_km2_anio,cos_medio_gkg,0.28556,33799,59.49357,51.17247,65.49154,0.02767,0.0,0.41509,indicativa
+cos_medio_gkg,agro_pct_2024,0.26229,33799,55.60176,45.97394,61.27876,0.05171,0.0,0.72387,no significativa
+lluvia_anual_1991_2020,quema_media_anual_pct,-0.41575,33799,21.22857,20.00362,23.04722,0.0593,0.0,0.77092,no significativa
+lluvia_anual_1991_2020,agro_pct_2024,-0.34166,33799,28.65022,26.2259,32.81353,0.07155,0.0,0.8586,no significativa
+quema_media_anual_pct,agro_pct_2024,0.3038,33799,35.58245,32.13857,37.83506,0.07345,0.0,0.8586,no significativa
+ph_medio,cambio_agro_pp,0.27305,33799,42.48321,37.45702,47.31331,0.07836,0.0,0.8586,no significativa
+focos_km2_anio,lluvia_anual_1991_2020,-0.34471,33799,26.40752,24.08544,28.49737,0.08196,0.0,0.8586,no significativa
+lluvia_seca_1991_2020,cambio_agro_pp,-0.29595,33799,35.07517,30.88942,38.20759,0.08396,0.0,0.8586,no significativa
+lluvia_anual_1991_2020,ph_medio,-0.44642,33799,15.4504,14.46535,17.04434,0.08954,0.0,0.8586,no significativa
+lluvia_seca_1991_2020,cos_medio_gkg,-0.27073,33799,39.52753,34.65317,46.26954,0.09315,0.0,0.8586,no significativa
+lluvia_anual_1991_2020,cambio_agro_pp,-0.24687,33799,42.32892,38.36239,46.90316,0.1135,0.0,0.8586,no significativa
+cos_medio_gkg,cambio_agro_pp,0.16277,33799,93.3082,76.36585,103.94271,0.11841,0.0,0.8586,no significativa
+lluvia_seca_1991_2020,agro_pct_2024,-0.31471,33799,19.83641,17.98938,21.98474,0.17859,0.0,0.8586,no significativa
+ph_medio,agro_pct_2024,0.26928,33799,23.51979,21.77859,25.43145,0.20834,0.0,0.8586,no significativa
+lluvia_anual_1991_2020,cos_medio_gkg,-0.18792,33799,38.62393,35.60319,44.36531,0.25442,0.0,0.8586,no significativa
