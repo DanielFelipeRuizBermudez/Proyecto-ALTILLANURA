@@ -1,0 +1,6 @@
+outs:
+- md5: 60637b9487cb50d43343c6febf8f929b.dir
+  size: 19022943
+  nfiles: 7
+  hash: md5
+  path: mapas_tif_2000

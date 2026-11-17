@@ -162,3 +162,33 @@ Nota: en celdas de borde muy pequeñas (`area_km2` < 1) un solo foco da densidad
 
 ### `datos/comunes/focos_celda_anual.csv` (cuaderno 22, DVC)
 Formato largo celda × año (34.763 × 23 = 799.549 filas): `id_celda`, `anio` (2003–2025) y `focos` (número de focos de la celda en ese año, 0 si no hubo).
+
+
+## Grilla común y expansión agropecuaria (cuadernos 02 y 30, Daniel)
+
+### `datos/comunes/grilla_2km.gpkg` (cuaderno 02, DVC)
+Capa `grilla`: 34.763 celdas de 2 × 2 km en EPSG:9377, recortadas al área de la Altillanura (135.649 km²). Cada celda pertenece al municipio que ocupa la mayor parte de su área. Fuente: límites del DANE, MGN 2025 (cuaderno 01).
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `id_celda` | Llave de la grilla común: coordenadas en km de la esquina inferior izquierda, EPSG:9377 (por ejemplo `x5120_y1986`) | texto | cuaderno 02 |
+| `mpio_cdpmp` | Código DIVIPOLA del municipio con la mayor parte de la celda | texto, 5 dígitos | MGN 2025 |
+| `mpio_cnmbr` | Nombre del municipio | texto | MGN 2025 |
+| `area_km2` | Área de la celda dentro de la Altillanura (4 si está completa) | km² | cuaderno 02 |
+| `frac_celda` | Fracción de la celda dentro de la Altillanura | proporción (0–1) | cuaderno 02 |
+| `x_9377`, `y_9377` | Centroide de la celda | m, EPSG:9377 | cuaderno 02 |
+| `geometry` | Polígono de la celda | EPSG:9377 | cuaderno 02 |
+
+### `datos/comunes/agro_celda.csv` (cuaderno 30, DVC)
+Una fila por celda de la grilla común (34.763 filas). Llave: `id_celda`. Fuente: MapBiomas Colombia, Colección 3, mapas de 2000 y 2024 con píxeles de 30 m. Uso agropecuario = clases 9 (plantación forestal), 21 (mosaico de agricultura y pastos) y 35 (palma de aceite).
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `id_celda` | Llave de la grilla común | texto | grilla_2km.gpkg (cuaderno 02) |
+| `agro_pct_2000`, `agro_pct_2024` | Área agropecuaria sobre el área con dato de la celda | % | MapBiomas |
+| `cambio_agro_pp` | `agro_pct_2024 − agro_pct_2000` | puntos porcentuales | cuaderno 30 |
+| `agro_ha_2000`, `agro_ha_2024` | Área agropecuaria de la celda | ha | MapBiomas |
+| `frac_valida_2000`, `frac_valida_2024` | Fracción del área de la celda con dato en el mapa | proporción (0–1) | cuaderno 30 |
+| `celda_valida` | True si los dos años tienen dato en al menos la mitad de la celda | booleano | cuaderno 30 |
+
+Nota: el paso 5 del cuaderno 30 compara el % agropecuario de cada municipio calculado con los mapas contra las tablas municipales de MapBiomas.
