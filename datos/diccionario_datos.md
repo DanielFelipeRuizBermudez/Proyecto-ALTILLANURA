@@ -163,6 +163,147 @@ Nota: en celdas de borde muy pequeñas (`area_km2` < 1) un solo foco da densidad
 ### `datos/comunes/focos_celda_anual.csv` (cuaderno 22, DVC)
 Formato largo celda × año (34.763 × 23 = 799.549 filas): `id_celda`, `anio` (2003–2025) y `focos` (número de focos de la celda en ese año, 0 si no hubo).
 
+## Modelos de expansión agropecuaria (cuadernos 31 a 33, Daniel)
+
+Resultados en `modulos/expansion/resultados/` (Git, salvo `33_lisa_celdas.csv`, que va en DVC) y figuras en `modulos/expansion/graficas/`.
+
+### `modulos/expansion/resultados/31_palma_eva_mapbiomas.csv` (cuaderno 31)
+Una fila por municipio y año, desde el primer año con palma en la EVA (2007) hasta el último año común con MapBiomas (2024). Llave: `mpio_cdpmp` + `anio`. Solo entran los municipio-año en que el municipio reporta algún cultivo en la EVA.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `mpio_cdpmp` | Código DIVIPOLA del municipio | texto, 5 dígitos | EVA y MapBiomas |
+| `anio` | Año | año | EVA y MapBiomas |
+| `eva_sembrada_ha`, `eva_cosechada_ha` | Área sembrada y cosechada de palma de aceite (0 si el municipio reportó otros cultivos ese año, pero no palma) | ha | EVA, cultivo `PALMA DE ACEITE` |
+| `mapbiomas_ha` | Área de palma de aceite | ha | MapBiomas Colombia, Colección 3, clase de nivel 2 "Palm oil" |
+| `municipio` | Nombre del municipio | texto | altillanura_municipios.csv (cuaderno 01) |
+| `dif_sembrada_ha` | `eva_sembrada_ha − mapbiomas_ha` | ha | cuaderno 31 |
+
+### `modulos/expansion/resultados/31_palma_resumen.csv` (cuaderno 31)
+Una fila por grupo y medida de la EVA. Solo usa los municipio-año con palma en al menos una de las dos fuentes.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `grupo` | `Municipio-año` (todos juntos), `Altillanura por año` (serie regional) o el nombre de un municipio | texto | cuaderno 31 |
+| `medida_eva` | Medida de la EVA comparada: `eva_sembrada` o `eva_cosechada` | texto | cuaderno 31 |
+| `n` | Número de municipio-año o de años comparados | conteo | cuaderno 31 |
+| `spearman`, `p_valor` | ρ de Spearman entre la EVA y MapBiomas y su valor p; vacíos si n < 5 o si una de las dos fuentes no varía | adimensional | cuaderno 31 |
+| `sesgo_medio_ha` | Promedio de EVA − MapBiomas | ha | cuaderno 31 |
+| `sesgo_relativo_pct` | Suma de EVA − MapBiomas sobre la suma de MapBiomas; vacío si MapBiomas suma 0 | % | cuaderno 31 |
+| `eva_media_ha`, `mapbiomas_media_ha` | Promedio de cada fuente | ha | cuaderno 31 |
+
+### Serie del ARIMA (cuaderno 32)
+% agropecuario anual de toda la Altillanura, 1985–2024: área de nivel 1 "Agricultural and livestock area" sobre el área total de las tablas municipales de MapBiomas Colombia, Colección 3, sumando los 7 municipios. Entrenamiento 1985–2018 y prueba 2019–2024. El paso a hectáreas usa el área total de 2024.
+
+### `modulos/expansion/resultados/32_arima_pruebas_estacionariedad.csv` (cuaderno 32)
+Una fila por orden de diferenciación `d` (0, 1 y 2), con la serie de entrenamiento.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `d` | Número de diferencias | entero | cuaderno 32 |
+| `adf_p` | Valor p de Dickey-Fuller aumentada (H0: raíz unitaria) | probabilidad | cuaderno 32 |
+| `kpss_p` | Valor p de KPSS (H0: estacionaria) | probabilidad | cuaderno 32 |
+| `acf_rezago_1` | Autocorrelación de rezago 1 de la serie diferenciada | adimensional | cuaderno 32 |
+| `desviacion` | Desviación estándar de la serie diferenciada | puntos porcentuales | cuaderno 32 |
+
+### `modulos/expansion/resultados/32_arima_candidatos.csv` (cuaderno 32)
+Una fila por modelo ARIMA(p, d, q) probado, con p y q de 0 a 3, ordenados por AICc.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `modelo` | Nombre del modelo, por ejemplo `ARIMA(2,1,0)` | texto | cuaderno 32 |
+| `p`, `d`, `q` | Órdenes autorregresivo, de diferenciación y de media móvil | entero | cuaderno 32 |
+| `aicc` | Criterio de Akaike corregido (menor es mejor) | adimensional | cuaderno 32 |
+| `converge` | True si la estimación convergió | booleano | cuaderno 32 |
+| `raices_ok` | True si todas las raíces AR y MA tienen módulo > 1,01 (estacionario e invertible) | booleano | cuaderno 32 |
+| `coef_significativos` | True si todos los coeficientes, sin contar la varianza, tienen p < 0,05 | booleano | cuaderno 32 |
+| `ljung_box_p` | Menor valor p de Ljung-Box en los rezagos 5 y 10 | probabilidad | cuaderno 32 |
+| `ljung_box_ok` | True si `ljung_box_p` > 0,05 (residuos sin autocorrelación) | booleano | cuaderno 32 |
+| `apto` | True si cumple las cuatro condiciones anteriores | booleano | cuaderno 32 |
+
+### `modulos/expansion/resultados/32_arima_prueba.csv` (cuaderno 32)
+Una fila por modelo y año de prueba (2019–2024): el ARIMA elegido y la caminata aleatoria con deriva, ajustados con 1985–2018.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `modelo` | ARIMA elegido o `Caminata con deriva` | texto | cuaderno 32 |
+| `anio` | Año pronosticado | año | cuaderno 32 |
+| `horizonte` | Años adelante desde 2018 | entero | cuaderno 32 |
+| `observado_pct` | % agropecuario observado | % | MapBiomas |
+| `pronostico_pct` | % agropecuario pronosticado | % | cuaderno 32 |
+| `inferior_95`, `superior_95` | Intervalo de predicción del 95 % | % | cuaderno 32 |
+| `error_pp` | `pronostico_pct − observado_pct` | puntos porcentuales | cuaderno 32 |
+
+### `modulos/expansion/resultados/32_arima_validacion.csv` (cuaderno 32)
+Una fila por modelo con los errores en la prueba 2019–2024.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `modelo` | ARIMA elegido o `Caminata con deriva` | texto | cuaderno 32 |
+| `mae_pp`, `rmse_pp` | Error absoluto medio y raíz del error cuadrático medio | puntos porcentuales | cuaderno 32 |
+| `mape_pct` | Error porcentual absoluto medio | % | cuaderno 32 |
+| `mase` | MAE dividido por el MAE del pronóstico ingenuo de un paso en el entrenamiento (< 1: mejor que el ingenuo) | adimensional | cuaderno 32 |
+| `cobertura_95_pct` | Porcentaje de años de prueba dentro del intervalo del 95 % | % | cuaderno 32 |
+| `mae_relativo_caminata` | MAE del modelo sobre el MAE de la caminata con deriva (< 1: le gana a la referencia) | adimensional | cuaderno 32 |
+
+### `modulos/expansion/resultados/32_arima_pronostico_2030.csv` (cuaderno 32)
+Una fila por modelo y año de 2025 a 2030, con los modelos ajustados con toda la serie 1985–2024.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `modelo` | ARIMA elegido o `Caminata con deriva` | texto | cuaderno 32 |
+| `anio` | Año pronosticado | año | cuaderno 32 |
+| `agro_pct` | % agropecuario pronosticado | % | cuaderno 32 |
+| `inferior_95_pct`, `superior_95_pct` | Intervalo de predicción del 95 % | % | cuaderno 32 |
+| `agro_ha` | Área agropecuaria pronosticada (`agro_pct` × área total de 2024) | ha | cuaderno 32 |
+| `inferior_95_ha`, `superior_95_ha` | Intervalo de predicción del 95 % | ha | cuaderno 32 |
+
+### `modulos/expansion/resultados/33_moran_global.csv` (cuaderno 33)
+Una fila por variable (`agro_pct_2024` y `cambio_agro_pp` de `agro_celda.csv`), en las celdas válidas con al menos una vecina. Vecindad reina de la grilla de 2 km con pesos estandarizados por fila.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `variable` | Columna de `agro_celda.csv` analizada | texto | cuaderno 33 |
+| `descripcion` | Nombre corto de la variable | texto | cuaderno 33 |
+| `n_celdas` | Celdas usadas | conteo | cuaderno 33 |
+| `I_moran` | I de Moran global (> 0: celdas vecinas se parecen) | adimensional | cuaderno 33 |
+| `I_esperado` | Valor esperado de I sin autocorrelación, −1/(n − 1) | adimensional | cuaderno 33 |
+| `p_permutacion` | Valor p por permutaciones | probabilidad | cuaderno 33 |
+| `permutaciones` | Número de permutaciones (999, semilla 2026) | conteo | cuaderno 33 |
+
+### `modulos/expansion/resultados/33_lisa_celdas.csv` (cuaderno 33, DVC)
+Una fila por celda válida con al menos una vecina. Llave: `id_celda`. LISA (Moran local) con 999 permutaciones, semilla 2026 y p < 0,05.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `id_celda` | Llave de la grilla común | texto | grilla_2km.gpkg (cuaderno 02) |
+| `mpio_cdpmp`, `municipio` | Código DIVIPOLA y nombre del municipio de la celda | texto | grilla_2km.gpkg (cuaderno 02) |
+| `lisa_agro_pct_2024`, `lisa_cambio_agro_pp` | Cuadrante LISA: `Alto–alto`, `Bajo–bajo`, `Alto–bajo`, `Bajo–alto` o `No significativo` | categoría | cuaderno 33 |
+| `p_agro_pct_2024`, `p_cambio_agro_pp` | Valor p por permutaciones de cada celda | probabilidad | cuaderno 33 |
+
+### `modulos/expansion/resultados/33_alto_alto_municipio.csv` (cuaderno 33)
+Una fila por municipio con los focos de expansión: celdas `Alto–alto` del cambio 2000–2024 (`lisa_cambio_agro_pp`).
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `municipio` | Nombre del municipio | texto | grilla_2km.gpkg (cuaderno 02) |
+| `celdas` | Celdas analizadas del municipio | conteo | cuaderno 33 |
+| `alto_alto` | Celdas alto–alto del cambio 2000–2024 | conteo | cuaderno 33 |
+| `pct_alto_alto` | `alto_alto` sobre `celdas` | % | cuaderno 33 |
+| `pct_del_total_alto_alto` | Parte de todas las celdas alto–alto de la Altillanura que está en el municipio | % | cuaderno 33 |
+
+### `modulos/expansion/resultados/33_correlograma.csv` (cuaderno 33)
+Una fila por variable y anillo de distancia de 4 km, de 0 a 60 km, con una muestra de 4.000 celdas (semilla 2026).
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `variable` | Columna de `agro_celda.csv` analizada | texto | cuaderno 33 |
+| `desde_km`, `hasta_km` | Límites del anillo de distancia entre centroides | km | cuaderno 33 |
+| `pares` | Pares de celdas de la muestra dentro del anillo | conteo | cuaderno 33 |
+| `I_moran` | I de Moran con los pares del anillo | adimensional | cuaderno 33 |
+| `p_permutacion` | Valor p de dos colas con 199 permutaciones | probabilidad | cuaderno 33 |
+
+Figuras: `31_palma_eva_vs_mapbiomas.png`, `32_identificacion.png`, `32_validacion.png`, `32_diagnostico.png`, `32_pronostico_2030.png`, `33_lisa_agro.png` y `33_correlograma.png`.
 
 ## Grilla común y expansión agropecuaria (cuadernos 02 y 30, Daniel)
 

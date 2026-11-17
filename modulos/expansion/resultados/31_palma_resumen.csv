@@ -1,0 +1,12 @@
+grupo,medida_eva,n,spearman,p_valor,sesgo_medio_ha,sesgo_relativo_pct,eva_media_ha,mapbiomas_media_ha
+Municipio-año,eva_sembrada,97,0.7369,0.0,3622.9136,106.3231,7030.3711,3407.4575
+Municipio-año,eva_cosechada,97,0.6995,0.0,1876.6353,55.0744,5284.0928,3407.4575
+Altillanura por año,eva_sembrada,18,0.8906,0.0,19523.4789,106.3231,37885.8889,18362.41
+Altillanura por año,eva_cosechada,18,0.9876,0.0,10112.9789,55.0744,28475.3889,18362.41
+CUMARIBO,eva_sembrada,7,,,550.0,,550.0,0.0
+LA PRIMAVERA,eva_sembrada,18,0.8674,0.0,2855.3084,1973.375,3000.0,144.6916
+MAPIRIPÁN,eva_sembrada,16,-0.4251,0.1007,-3473.128,-34.1224,6705.3125,10178.4405
+PUERTO CARREÑO,eva_sembrada,2,,,35.0,,35.0,0.0
+PUERTO GAITÁN,eva_sembrada,18,0.7978,0.0001,17128.406,278.7834,23272.3889,6143.9829
+PUERTO LÓPEZ,eva_sembrada,18,0.835,0.0,686.2184,31.1878,2886.5,2200.2816
+SANTA ROSALÍA,eva_sembrada,18,0.8547,0.0,1722.9934,208.6072,2548.9444,825.9511

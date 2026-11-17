@@ -11,3 +11,5 @@ dvc[gs]>=3.0
 pykrige>=1.7
 gstools>=1.5
 shapely>=2.0
+esda>=2.5
+libpysal>=4.10
