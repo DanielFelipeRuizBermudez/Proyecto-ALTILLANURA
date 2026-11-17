@@ -25,4 +25,6 @@ def descriptivo(p):
         }
     )
     t["expansion_total_ha"] = t["agro_2024_ha"] - t["agro_2001_ha"]
-    return t.round(2).sort_values("area_total_ha", ascending=False)
+    t = t.round(2).sort_values("area_total_ha", ascending=False)
+    t.insert(0, "mpio_cdpmp", t.index.map(cfg.DIVIPOLA))
+    return t

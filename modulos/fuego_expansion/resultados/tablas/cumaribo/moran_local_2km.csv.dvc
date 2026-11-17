@@ -1,0 +1,5 @@
+outs:
+- md5: 64a96234c32dc500853e9677053e0419
+  size: 1469410
+  hash: md5
+  path: moran_local_2km.csv

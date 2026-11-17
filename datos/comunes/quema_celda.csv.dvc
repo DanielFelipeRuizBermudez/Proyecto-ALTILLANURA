@@ -1,0 +1,5 @@
+outs:
+- md5: dd3738b7e1f8d50a8d111ee13c50b79c
+  size: 1443254
+  hash: md5
+  path: quema_celda.csv
