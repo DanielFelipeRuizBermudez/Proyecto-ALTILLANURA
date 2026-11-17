@@ -1,0 +1,7 @@
+﻿modelo,terminos_deterministas,mae_pp_territorio,sesgo_pp_territorio,cortes_sin_convergencia
+ARIMA,constante,0.09584750854293972,-0.06297918090797501,0
+ARIMA,constante y tendencia,0.11075343929923609,0.07128509173405541,0
+ARIMAX lluvia,constante,0.09666220918845897,-0.06517526215276202,0
+ARIMAX lluvia,constante y tendencia,0.11903692076598198,0.0717242251012097,0
+ARIMAX lluvia + quema,constante,0.08919568517386495,-0.05956228452009008,0
+ARIMAX lluvia + quema,constante y tendencia,0.11337470931452757,0.09229490159537397,1

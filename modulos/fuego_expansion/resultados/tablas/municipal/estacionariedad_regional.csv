@@ -1,0 +1,11 @@
+﻿serie,terminos_deterministas,n,adf_estadistico,adf_p,adf_rezagos,adf_rechaza_raiz_unitaria,kpss_estadistico,kpss_p,kpss_p_acotado,kpss_rechaza_estacionariedad,lectura
+Cambio agropecuario (d_agro_pct),constante,23,-4.003893499294706,0.0013902604100500668,0,True,0.5225594860926931,0.03658570133047453,False,True,contradictoria
+Cambio agropecuario (d_agro_pct),constante y tendencia,23,-4.767654598682764,0.0005333932929459553,0,True,0.13846023477993905,0.06396252818529805,False,False,estacionaria
+Lluvia seca de t−1,constante,23,-4.419002207897873,0.00027467225082470075,0,True,0.27143828994217667,0.1,True,False,estacionaria
+Lluvia seca de t−1,constante y tendencia,23,-4.076447846600986,0.006826783189955564,1,True,0.15099058023231443,0.04584118313973797,False,True,contradictoria
+Quema natural de t−1,constante,23,-4.27123055757888,0.0004980244142875472,0,True,0.24084601187634022,0.1,True,False,estacionaria
+Quema natural de t−1,constante y tendencia,23,-4.456031293015773,0.0017797912611264002,0,True,0.15520566822191317,0.04232860981507235,False,True,contradictoria
+Nivel agropecuario (% del territorio),constante,23,2.665241009963495,0.9990843914626057,0,False,0.6794547228528541,0.015413207013376895,False,True,no estacionaria
+Nivel agropecuario (% del territorio),constante y tendencia,23,-2.937781927432301,0.15031430077428237,0,False,0.160042842156674,0.03829763153610499,False,True,no estacionaria
+"Nivel agropecuario, primera diferencia",constante,22,-3.7443670218777885,0.0035306491620728433,0,True,0.6217757284904082,0.020656751955417434,False,True,contradictoria
+"Nivel agropecuario, primera diferencia",constante y tendencia,22,-4.7058055408669075,0.0006821494679759408,0,True,0.12900859770978068,0.08146555979670243,False,False,estacionaria
