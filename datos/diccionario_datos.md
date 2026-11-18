@@ -1,6 +1,12 @@
 # Diccionario de datos
 
-## Suelos (cuadernos 40 y 42, Katalina)
+## Suelos (cuadernos 40, 41 y 42, Katalina)
+
+**Clases de pH (sección 14.3 de la ruta):** extremadamente ácido pH < 4,5 · muy fuertemente ácido 4,5 ≤ pH ≤ 5,0 · fuertemente ácido 5,0 < pH ≤ 5,5 · moderadamente ácido o más pH > 5,5. La columna `pct_ph_5_1_a_5_5` conserva su nombre, pero cubre 5,0 < pH ≤ 5,5.
+
+**Ojo con el 5,0:** `pct_area_ph_menor_5` usa pH < 5 (estricto) y la clase muy fuertemente ácida incluye el 5,0. SoilGrids redondea el pH a décimas y muchos píxeles valen exactamente 5,0, así que las dos cifras difieren (Mapiripán: 50,5 % con pH < 5 frente a 62,9 % en la clase 4,5-5,0).
+
+**Advertencias:** SoilGrids es un modelo, no una medición, y usa la cobertura del suelo como covariable: parte de su relación con el uso agropecuario puede ser circular (sección 12.3 de la ruta). Frente a perfiles medidos de WoSIS (cuaderno 41) el pH se parece (R² = 0,72) y el COS está sobreestimado en unos +6,8 g/kg.
 
 ### `datos/comunes/suelo_celda.csv` (cuaderno 42, DVC)
 Una fila por celda de la grilla común de 2 km (34.763 filas). Llave: `id_celda`. Fuente: SoilGrids 2.0 (ISRIC), 0-30 cm, sin fecha.
@@ -15,14 +21,24 @@ Una fila por celda de la grilla común de 2 km (34.763 filas). Llave: `id_celda`
 | `ph_medio` | pH en agua, promedio de los píxeles | pH | SoilGrids |
 | `cos_medio_gkg` | Carbono orgánico, promedio de los píxeles | g/kg | SoilGrids |
 | `log_cos_medio` | Logaritmo natural de cos_medio_gkg | ln(g/kg) | cuaderno 42 |
-| `pct_area_ph_menor_5` | % de píxeles con pH < 5 (toxicidad por aluminio) | % del área | SoilGrids |
-| `clase_ph` | Clase de pH del promedio de la celda | categoría | cuaderno 42 |
+| `pct_area_ph_menor_5` | % de píxeles con pH < 5, estricto (toxicidad por aluminio) | % del área | SoilGrids |
+| `clase_ph` | Clase de pH del promedio de la celda (cortes arriba) | categoría | cuaderno 42 |
 | `pct_ph_menor_4_5` | % de píxeles con pH < 4,5 | % del área | SoilGrids |
-| `pct_ph_4_5_a_5_0` | % de píxeles con 4,5 ≤ pH ≤ 5,0 | % del área | SoilGrids |
+| `pct_ph_4_5_a_5_0` | % de píxeles con 4,5 ≤ pH ≤ 5,0 (las 4 columnas de clase suman 100, salvo en las celdas con `relleno_vecino`, que quedan vacías) | % del área | SoilGrids |
 | `pct_ph_5_1_a_5_5` | % de píxeles con 5,0 < pH ≤ 5,5 | % del área | SoilGrids |
 | `pct_ph_mayor_5_5` | % de píxeles con pH > 5,5 | % del área | SoilGrids |
 | `ph_kriging` | pH por kriging ordinario con 300 puntos (vacío en 851 celdas de borde) | pH | cuaderno 40 |
 | `cos_kriging_gkg` | COS por kriging en log con corrección exp(pred + var/2) (vacío en las mismas celdas) | g/kg | cuaderno 40 |
+
+### `modulos/suelos/resultados/` (cuaderno 41, Git)
+
+| Archivo | Contenido |
+|---|---|
+| `41_tabla_validacion.csv` | Tabla final de validación: interna (kriging vs SoilGrids, LOO y validación independiente, del cuaderno 40) y externa (SoilGrids y kriging vs WoSIS; SoilGrids vs mapa IGAC). Columnas: `propiedad`, `validacion`, `conjunto`, `metodo`, `n`, `RMSE`, `MAE`, `ME`, `R2`, `MSSE`, `pepita_meseta`, `rango_km`, `acuerdo_pct`, `kappa` |
+| `41_wosis_sitios.csv` | 27 sitios WoSIS con pH y COS medidos 0-30 cm (`ph`, `cos_gkg`), año, incertidumbre de posición y lo que dan SoilGrids (`ph_soilgrids`, `cos_soilgrids`) y el kriging (`ph_kriging`, `cos_kriging` y sus varianzas) |
+| `41_igac_concordancia.csv` | % de acuerdo y kappa de Cohen entre las clases de pH del IGAC (2016) y SoilGrids (corte 5,5) |
+| `41_suelo_por_paisaje.csv` | % del área, pH medio, % con pH < 5 y COS medio de SoilGrids por paisaje del IGAC |
+| `41_clases_ph_area.csv` | % del área de cada municipio en cada clase de pH (píxeles de SoilGrids) |
 
 ## Fuego y expansión (cuadernos 23, 24 y 50 a 53, Jonatan)
 

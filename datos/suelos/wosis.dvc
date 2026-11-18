@@ -1,0 +1,6 @@
+outs:
+- md5: 3ff621ef8680e1c09ba5d7af26598be8.dir
+  size: 683999
+  nfiles: 3
+  hash: md5
+  path: wosis
