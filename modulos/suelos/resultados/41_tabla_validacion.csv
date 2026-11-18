@@ -1,0 +1,12 @@
+propiedad,validacion,conjunto,metodo,n,RMSE,MAE,ME,R2,MSSE,pepita_meseta,rango_km,acuerdo_pct,kappa
+COS 0-30 cm (g/kg; kriging en log),interna: kriging vs SoilGrids,LOO (300 puntos),kriging ordinario (exponencial),300,3.623,2.5115,-0.034,0.2565,0.9663,0.5939,213.2443,,
+COS 0-30 cm (g/kg; kriging en log),interna: kriging vs SoilGrids,validación independiente (200 puntos),kriging ordinario (exponencial),300,4.3004,2.9304,-0.2703,0.1148,,0.5939,213.2443,,
+pH 0-30 cm,interna: kriging vs SoilGrids,LOO (300 puntos),kriging ordinario (esférico),300,0.1061,0.0806,0.0005,0.7863,1.1145,0.0696,212.7688,,
+pH 0-30 cm,interna: kriging vs SoilGrids,validación independiente (200 puntos),kriging ordinario (esférico),300,0.1143,0.0816,-0.0083,0.7363,,0.0696,212.7688,,
+pH 0-30 cm,externa: vs WoSIS (medido),caja (sitios con SoilGrids),SoilGrids 250 m,19,0.1684,0.1382,0.063,0.7193,,,,,
+pH 0-30 cm,externa: vs WoSIS (medido),7 municipios,SoilGrids 250 m,9,0.1546,0.1048,0.083,0.3831,,,,,
+pH 0-30 cm,externa: vs WoSIS (medido),7 municipios,Kriging ordinario 2 km (cuaderno 40),9,0.2437,0.2055,0.1435,-0.5332,5.292,,,,
+COS 0-30 cm (g/kg),externa: vs WoSIS (medido),caja (sitios con SoilGrids),SoilGrids 250 m,19,10.0757,7.3682,6.7696,0.5066,,,,,
+COS 0-30 cm (g/kg),externa: vs WoSIS (medido),7 municipios,SoilGrids 250 m,9,7.5834,6.0198,5.1413,0.1547,,,,,
+COS 0-30 cm (g/kg),externa: vs WoSIS (medido),7 municipios,Kriging ordinario 2 km (cuaderno 40),9,10.1,8.5109,4.9494,-0.4994,37.882,,,,
+"pH (clases, corte 5,5)",externa: vs mapa IGAC 2016,píxeles de los 7 municipios,SoilGrids 250 m,1731345,,,,,,,,97.8927,-0.0011

@@ -1,0 +1,6 @@
+outs:
+- md5: ac76e7b8129907d1db94f615bf503c95.dir
+  size: 86949888
+  nfiles: 1
+  hash: md5
+  path: igac
