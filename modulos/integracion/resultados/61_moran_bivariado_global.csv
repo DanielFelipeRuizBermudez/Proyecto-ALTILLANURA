@@ -1,0 +1,6 @@
+x,y,I_bivariado,p_permutacion,celdas_Alto–Alto,celdas_Bajo–Alto,celdas_Bajo–Bajo,celdas_Alto–Bajo,celdas_No significativo
+focos_km2_anio,ph_medio,0.52128,0.001,7210,4834,9202,369,12184
+focos_km2_anio,lluvia_seca_1991_2020,-0.33888,0.001,1919,8713,4505,5311,13351
+focos_km2_anio,cambio_agro_pp,0.14597,0.001,2457,2296,8570,1433,19043
+ph_medio,cambio_agro_pp,0.17347,0.001,4088,665,7121,2882,19043
+quema_media_anual_pct,ph_medio,0.56513,0.001,8165,3879,9558,13,12184
