@@ -1,3 +1,3 @@
-variable,descripcion,n_celdas,I_moran,I_esperado,p_permutacion,permutaciones
-agro_pct_2024,% agropecuario 2024,34473,0.79364,-3e-05,0.001,999
-cambio_agro_pp,cambio 2000–2024 (pp),34473,0.60189,-3e-05,0.001,999
+variable,descripcion,n_celdas,I_moran,I_esperado,p_permutacion,p_minimo_posible,p_reporte,permutaciones
+agro_pct_2024,% agropecuario 2024,34473,0.79364,-3e-05,0.001,0.001,"p ≤ 0,001",999
+cambio_agro_pp,cambio 2000–2024 (pp),34473,0.60189,-3e-05,0.001,0.001,"p ≤ 0,001",999

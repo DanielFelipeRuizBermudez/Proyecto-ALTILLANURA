@@ -1,0 +1,3 @@
+modelo,papel,coeficientes,modulo_minimo_raices,raices_ok,coef_significativos,ljung_box_p_5,ljung_box_p_10,ljung_box_ok,shapiro_p,jarque_bera_p,cumple_criterios
+"ARIMA(1,1,1)",elegido,ar.L1 = 0.992; ma.L1 = -0.703,1.008,False,True,0.8762,0.9875,True,0.1928,0.0216,False
+"ARIMA(0,2,1)",sensibilidad,ma.L1 = -0.704,1.4199,True,True,0.7792,0.9672,True,0.9875,0.9709,True

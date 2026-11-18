@@ -3,6 +3,7 @@ Municipio-año,eva_sembrada,97,0.7369,0.0,3622.9136,106.3231,7030.3711,3407.4575
 Municipio-año,eva_cosechada,97,0.6995,0.0,1876.6353,55.0744,5284.0928,3407.4575
 Altillanura por año,eva_sembrada,18,0.8906,0.0,19523.4789,106.3231,37885.8889,18362.41
 Altillanura por año,eva_cosechada,18,0.9876,0.0,10112.9789,55.0744,28475.3889,18362.41
+"Altillanura, cambio anual",eva_sembrada,17,-0.0392,0.8812,1429.2689,87.093,3070.3529,1641.084
 CUMARIBO,eva_sembrada,7,,,550.0,,550.0,0.0
 LA PRIMAVERA,eva_sembrada,18,0.8674,0.0,2855.3084,1973.375,3000.0,144.6916
 MAPIRIPÁN,eva_sembrada,16,-0.4251,0.1007,-3473.128,-34.1224,6705.3125,10178.4405
