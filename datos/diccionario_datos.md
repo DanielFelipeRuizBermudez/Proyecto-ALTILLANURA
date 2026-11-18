@@ -192,3 +192,32 @@ Una fila por celda de la grilla común (34.763 filas). Llave: `id_celda`. Fuente
 | `celda_valida` | True si los dos años tienen dato en al menos la mitad de la celda | booleano | cuaderno 30 |
 
 Nota: el paso 5 del cuaderno 30 compara el % agropecuario de cada municipio calculado con los mapas contra las tablas municipales de MapBiomas.
+
+## Tablas maestras (cuaderno 60, Daniel)
+
+### `datos/comunes/grilla_2km_variables.csv` (cuaderno 60, DVC)
+Una fila por celda de la grilla común (34.763 filas). Llave: `id_celda`. Une las columnas de `grilla_2km.gpkg` (sin la geometría) con todas las capas `datos/comunes/*_celda.csv` que tienen una fila por celda (`focos_celda`, `lluvia_celda`, `quema_celda`, `agro_celda` y `suelo_celda`); las variables de cada capa están descritas en su sección. Las columnas que una capa repite de la grilla (municipio, área) se toman de la grilla. Se vuelve a generar cuando llega una capa nueva.
+
+### `datos/comunes/panel_municipio_anio.csv` (cuaderno 60)
+Una fila por municipio y año: 7 × 41 = 287 filas (1985–2025). Llave: `mpio_cdpmp` + `anio`. La temporada seca del año t va de diciembre de t − 1 a marzo de t. Un año o una temporada solo se calcula si tiene todos sus meses. Las variables que también están en el panel del módulo de fuego y expansión usan los mismos nombres y definiciones.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `mpio_cdpmp`, `mpio_cnmbr` | Código DIVIPOLA y nombre del municipio | texto | MGN 2025 |
+| `anio` | Año calendario; para la temporada seca, año en que termina | año | cuaderno 60 |
+| `area_mpio_ha` | Área oficial del municipio | ha | MGN 2025 (cuaderno 01) |
+| `area_total_ha` | Área del municipio en las tablas de MapBiomas | ha | MapBiomas Colección 3, tablas municipales |
+| `agro_ha`, `agro_pct` | Zona agrícola y ganadera (nivel 1) | ha; % del área total | MapBiomas |
+| `d_agro_pct` | Cambio neto agropecuario sobre el área total del año anterior | puntos porcentuales del territorio | cuaderno 60 |
+| `sabana_ha`, `sabana_pct` | Praderas y herbáceas | ha; % del área total | MapBiomas |
+| `palma_mapbiomas_ha` | Palma de aceite | ha | MapBiomas |
+| `eva_sembrada_ha` | Área sembrada de todos los cultivos (2006–2025) | ha | EVA |
+| `eva_palma_ha`, `eva_soya_ha`, `eva_maiz_ha`, `eva_arroz_ha` | Área sembrada por cultivo | ha | EVA |
+| `focos_anual_total` | Detecciones Terra + Aqua en el año calendario (2003–2025) | detecciones | FIRMS (cuaderno 03) |
+| `focos_seca_total` | Detecciones Terra + Aqua en la temporada seca (2004–2025) | detecciones | FIRMS (cuaderno 03) |
+| `lluvia_anual_mm`, `lluvia_seca_mm` | Lluvia del año y de la temporada seca | mm | CHIRPS (cuaderno 11) |
+| `lluvia_anual_anom_pct`, `lluvia_seca_anom_pct` | Lluvia frente a la normal 1991–2020 | % | CHIRPS (cuaderno 11) |
+| `oni_anual`, `oni_seca` | Promedio del ONI del año y de la temporada seca, igual para los siete municipios | °C | NOAA (cuaderno 10) |
+
+### `datos/comunes/panel_municipio_mes.csv` (cuaderno 60)
+Una fila por municipio y mes: 7 × 540 = 3.780 filas (1981-01 a 2025-12). Llave: `mpio_cdpmp` + `mes`. Columnas: `lluvia_mm`, `normal_mm`, `anom_mm` y `anom_pct` (CHIRPS, cuaderno 11); `focos_total` (Terra + Aqua desde 2003-01, vacío antes) y `focos_terra` (desde 2000-11) (FIRMS, cuaderno 03); `oni` y `fase` (NOAA, cuaderno 10).

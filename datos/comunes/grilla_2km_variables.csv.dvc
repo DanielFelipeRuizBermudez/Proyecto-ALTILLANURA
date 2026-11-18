@@ -1,0 +1,5 @@
+outs:
+- md5: b543e36bb4b11b33865307c654374c9d
+  size: 9984599
+  hash: md5
+  path: grilla_2km_variables.csv
