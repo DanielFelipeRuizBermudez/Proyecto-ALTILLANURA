@@ -1,0 +1,9 @@
+variable,descripcion,CP1,CP2,CP3
+focos_km2_anio,Focos por km² al año,0.7887,0.0157,0.3135
+quema_media_anual_pct,Área quemada al año (%),0.8334,-0.1928,0.2683
+lluvia_seca_1991_2020,Lluvia dic–mar (mm),-0.8122,0.2903,0.4345
+lluvia_anual_1991_2020,Lluvia anual (mm),-0.691,0.2065,0.6242
+ph_medio,pH del suelo,0.8254,-0.3041,0.2006
+cos_medio_gkg,Carbono orgánico (g/kg),0.4939,-0.0939,0.4716
+agro_pct_2024,% agropecuario 2024,0.5959,0.6954,-0.0892
+cambio_agro_pp,Cambio agropecuario 2000–2024 (pp),0.5647,0.7256,-0.0564

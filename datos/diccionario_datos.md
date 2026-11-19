@@ -379,6 +379,62 @@ Una fila por celda de la grilla común (34.763 filas). Llave: `id_celda`. Fuente
 
 Nota: el paso 5 del cuaderno 30 compara el % agropecuario de cada municipio calculado con los mapas contra las tablas municipales de MapBiomas.
 
+## Integración: ACP global y GWPCA (cuaderno 62, Daniel)
+
+Resultados en `modulos/integracion/resultados/` (Git, salvo `62_gwpca_celdas.csv`, que va en DVC) y figuras en `modulos/integracion/graficas/`. Usa las mismas 8 variables y las mismas celdas del cuaderno 61 (`frac_celda` ≥ 0,5, `celda_valida` y sin datos faltantes), con cada variable pasada a rangos estandarizados.
+
+### `modulos/integracion/resultados/62_acp_varianza.csv` (cuaderno 62)
+Una fila por componente del ACP global (CP1 a CP8).
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `componente` | Componente principal | texto | cuaderno 62 |
+| `valor_propio` | Varianza del componente (> 1: explica más que una variable sola) | adimensional | cuaderno 62 |
+| `pct_varianza`, `pct_acumulado` | % de la variación total que explica el componente y % acumulado | % | cuaderno 62 |
+
+### `modulos/integracion/resultados/62_acp_cargas.csv` (cuaderno 62)
+Una fila por variable con sus cargas en los tres primeros componentes del ACP global.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `variable`, `descripcion` | Columna de `grilla_2km_variables.csv` y su nombre | texto | cuaderno 60 |
+| `CP1`, `CP2`, `CP3` | Carga: correlación de la variable con el componente; el signo de cada componente se fija para que su carga más grande sea positiva | adimensional, −1 a 1 | cuaderno 62 |
+
+### `modulos/integracion/resultados/62_gwpca_ancho_banda.csv` (cuaderno 62)
+Una fila por ancho de banda probado en la validación cruzada del GWPCA (muestra de 4.000 celdas, semilla 2026).
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `vecinos` | Ancho de banda: número de celdas vecinas de la muestra en el núcleo bisquare adaptativo | conteo | cuaderno 62 |
+| `distancia_mediana_km` | Distancia mediana hasta el vecino número `vecinos` (radio de cada ACP local) | km | cuaderno 62 |
+| `error_cv` | Suma de errores al reconstruir cada celda, dejada fuera, con 2 componentes locales (menor es mejor) | adimensional | cuaderno 62 |
+
+### `modulos/integracion/resultados/62_gwpca_celdas.csv` (cuaderno 62, DVC)
+Una fila por celda analizada. Llave: `id_celda`.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `id_celda` | Llave de la grilla común | texto | grilla_2km.gpkg (cuaderno 02) |
+| `mpio_cdpmp`, `municipio` | Código DIVIPOLA y nombre del municipio de la celda | texto | grilla_2km.gpkg (cuaderno 02) |
+| `cp1_global`, `cp2_global` | Puntaje de la celda en los dos primeros componentes del ACP global | adimensional | cuaderno 62 |
+| `pct_varianza_cp1_local` | % de la variación local que explica el primer componente del GWPCA | % | cuaderno 62 |
+| `pct_varianza_cp1_cp2_local` | % de la variación local que explican los dos primeros componentes del GWPCA | % | cuaderno 62 |
+| `variable_dominante` | Variable con mayor carga absoluta en el primer componente local | texto | cuaderno 62 |
+| `carga_dominante` | Valor absoluto de esa carga (vector propio local); si es baja, la variable dominante es poco estable | adimensional, 0 a 1 | cuaderno 62 |
+
+### `modulos/integracion/resultados/62_gwpca_municipio.csv` (cuaderno 62)
+Una fila por municipio.
+
+| Variable | Descripción | Unidad | Fuente |
+|---|---|---|---|
+| `municipio` | Nombre del municipio | texto | grilla_2km.gpkg (cuaderno 02) |
+| `celdas` | Celdas analizadas del municipio | conteo | cuaderno 62 |
+| `mediana_pct_cp1_local` | Mediana de `pct_varianza_cp1_local` en el municipio | % | cuaderno 62 |
+| `variable_mas_frecuente` | Variable dominante más frecuente en las celdas del municipio | texto | cuaderno 62 |
+| `pct_celdas_variable` | % de las celdas del municipio donde domina esa variable | % | cuaderno 62 |
+
+Figuras: `62_acp_global.png`, `62_gwpca_ancho_banda.png` y `62_gwpca_mapas.png`.
+
 ## Tablas maestras (cuaderno 60, Daniel)
 
 ### `datos/comunes/grilla_2km_variables.csv` (cuaderno 60, DVC)
