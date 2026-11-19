@@ -1,0 +1,7 @@
+variable,criterio,umbral_p,Alto–alto,Bajo–bajo,Alto–bajo,Bajo–alto,No significativo
+agro_pct_2024,FDR 5 %,0.02507,4498,12592,14,184,17185
+agro_pct_2024,"p < 0,05 sin corrección",0.05,5071,14258,23,308,14813
+agro_pct_2024,"p < 0,01 sin corrección",0.01,3677,10902,4,65,19825
+cambio_agro_pp,FDR 5 %,0.00454,2125,823,55,128,31342
+cambio_agro_pp,"p < 0,05 sin corrección",0.05,4135,11805,187,560,17786
+cambio_agro_pp,"p < 0,01 sin corrección",0.01,2691,1513,79,219,29971
